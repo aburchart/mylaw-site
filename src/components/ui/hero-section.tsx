@@ -19,7 +19,7 @@ const HeroSection = () => {
           {/* Hero Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
-              <div className="inline-flex items-center space-x-2 bg-trust/20 text-primary px-4 py-2 rounded-full text-sm font-medium">
+              <div className="inline-flex items-center space-x-2 bg-trust/60 text-primary px-4 py-2 rounded-full text-sm font-medium border border-primary/20">
                 <Shield className="h-4 w-4" />
                 <span>Compliance-Focused Legal Advisory</span>
               </div>
