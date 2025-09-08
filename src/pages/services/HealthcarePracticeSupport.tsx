@@ -194,8 +194,8 @@ const HealthcarePracticeSupport = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8">Book a Call</Button>
-            <Button variant="outline" size="lg" className="text-lg px-8">Ask a Question</Button>
-            <Button variant="outline" size="lg" className="text-lg px-8">Chat on WhatsApp</Button>
+            <Button variant="outline" size="lg" className="border-primary text-primary text-lg px-8">Ask a Question</Button>
+            <Button variant="outline" size="lg" className="border-primary text-primary text-lg px-8">Chat on WhatsApp</Button>
           </div>
         </div>
       </section>

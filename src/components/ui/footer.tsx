@@ -119,7 +119,7 @@ const Footer = () => {
               </Button>
               <Button 
                 variant="outline" 
-                className="w-full border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                className="w-full border-primary text-primary hover:bg-primary/10"
               >
                 Download Free Guide
               </Button>

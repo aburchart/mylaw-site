@@ -167,7 +167,7 @@ const AuditRegulatoryResponse = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
-              <Button variant="outline" size="lg" className="shadow-professional">
+              <Button variant="outline" size="lg" className="border-primary text-primary shadow-professional">
                 Download the Checklist
               </Button>
             </CardContent>
@@ -188,10 +188,10 @@ const AuditRegulatoryResponse = () => {
             <Button size="lg" variant="secondary" className="shadow-professional">
               Book a Call
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
               Ask a Question
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
               Chat on WhatsApp
             </Button>
           </div>

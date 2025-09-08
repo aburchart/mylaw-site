@@ -153,7 +153,7 @@ const NDISComplianceAdvisory = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
-              <Button size="lg" variant="outline" className="shadow-professional">
+              <Button size="lg" variant="outline" className="border-primary text-primary shadow-professional">
                 <Download className="mr-2 h-5 w-5" />
                 Download the Free Checklist
               </Button>
@@ -176,11 +176,11 @@ const NDISComplianceAdvisory = () => {
               <Phone className="mr-2 h-5 w-5" />
               Book a Call
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
               <MessageCircle className="mr-2 h-5 w-5" />
               Ask a Question
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
+            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
               Chat on WhatsApp
             </Button>
           </div>
