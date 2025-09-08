@@ -54,8 +54,8 @@ export const BookingModalProvider: React.FC<BookingModalProviderProps> = ({ chil
     <BookingModalContext.Provider value={value}>
       {children}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-4xl w-full h-[80vh] max-h-[800px] p-0 overflow-hidden">
-          <DialogHeader className="p-6 pb-0">
+        <DialogContent className="max-w-4xl w-full h-[80vh] max-h-[800px] p-0 flex flex-col">
+          <DialogHeader className="p-6 pb-0 flex-shrink-0">
             <div className="flex items-center justify-between">
               <DialogTitle className="text-xl font-semibold">
                 Book Your Consultation
@@ -72,15 +72,14 @@ export const BookingModalProvider: React.FC<BookingModalProviderProps> = ({ chil
             </div>
           </DialogHeader>
           
-          <div className="flex-1 p-6 pt-0">
-            <div className="w-full h-full relative">
+          <div className="flex-1 overflow-auto p-6 pt-0">
+            <div className="w-full relative">
               <iframe
                 src="https://link.burkstreet.com/widget/booking/qccF54itA96MKyu9MnFo"
                 style={{
                   width: '100%',
-                  height: '100%',
-                  border: 'none',
-                  overflow: 'hidden'
+                  minHeight: '700px',
+                  border: 'none'
                 }}
                 scrolling="no"
                 id="qccF54itA96MKyu9MnFo_1757299327199"
