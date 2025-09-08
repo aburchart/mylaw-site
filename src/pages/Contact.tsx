@@ -52,7 +52,7 @@ const Contact = () => {
           
           <div className="max-w-4xl mx-auto">
             <Card>
-              <CardContent className="p-6">
+              <CardContent className="p-6 max-h-[600px] overflow-y-auto">
                 <iframe 
                   src="https://link.burkstreet.com/widget/booking/qccF54itA96MKyu9MnFo" 
                   style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }} 
