@@ -52,11 +52,11 @@ const Contact = () => {
           
           <div className="max-w-4xl mx-auto">
             <Card>
-              <CardContent className="p-6 max-h-[600px] overflow-y-auto">
+              <CardContent className="p-0 h-[70vh] min-h-[560px]">
                 <iframe 
                   src="https://link.burkstreet.com/widget/booking/qccF54itA96MKyu9MnFo" 
-                  style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }} 
-                  scrolling="no" 
+                  style={{ width: '100%', height: '100%', border: 'none' }} 
+                   
                   id="qccF54itA96MKyu9MnFo_1757295839703"
                   title="Book a Compliance Call"
                 />

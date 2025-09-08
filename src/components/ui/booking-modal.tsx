@@ -72,16 +72,15 @@ export const BookingModalProvider: React.FC<BookingModalProviderProps> = ({ chil
             </div>
           </DialogHeader>
           
-          <div className="flex-1 overflow-auto p-6 pt-0">
-            <div className="w-full relative">
+          <div className="flex-1 min-h-0 p-6 pt-0">
+            <div className="w-full h-full relative">
               <iframe
                 src="https://link.burkstreet.com/widget/booking/qccF54itA96MKyu9MnFo"
                 style={{
                   width: '100%',
-                  minHeight: '700px',
+                  height: '100%',
                   border: 'none'
                 }}
-                scrolling="no"
                 id="qccF54itA96MKyu9MnFo_1757299327199"
                 title="Book a consultation"
                 className="rounded-md"
