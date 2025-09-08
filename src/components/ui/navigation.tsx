@@ -24,7 +24,7 @@ const Navigation = () => {
 
   const serviceItems = [
     { name: "Aged Care Compliance Advisory", href: "/services/aged-care-advisory" },
-    { name: "NDIS Compliance Advisory", href: "/services/ndis-compliance" },
+    { name: "NDIS Compliance Advisory", href: "/services/ndis-compliance-advisory" },
     { name: "Healthcare Practice Compliance", href: "/services/healthcare-compliance" },
     { name: "Audit & Regulatory Response", href: "/services/audit-response" },
     { name: "Clinical Documentation & Training", href: "/services/training" },

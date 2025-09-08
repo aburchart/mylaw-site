@@ -18,7 +18,7 @@ const Services = () => {
       title: "NDIS Compliance Advisory", 
       description: "Maintain your NDIS registration and funding with comprehensive compliance support and audit preparation.",
       icon: CheckCircle,
-      href: "/services/ndis-compliance",
+      href: "/services/ndis-compliance-advisory",
       color: "text-green-600"
     },
     {
