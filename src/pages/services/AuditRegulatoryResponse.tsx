@@ -3,8 +3,10 @@ import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertTriangle, FileText, Shield, Clock, Users, CheckCircle2 } from "lucide-react";
+import { useBookingModal } from "@/components/ui/booking-modal";
 
 const AuditRegulatoryResponse = () => {
+  const { open: openBookingModal } = useBookingModal();
   const triggers = [
     {
       icon: FileText,
@@ -75,7 +77,7 @@ const AuditRegulatoryResponse = () => {
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
             MyLaw Solutions helps aged care and NDIS providers respond quickly and correctly to audits, complaints, and compliance investigations — with calm, clear legal support.
           </p>
-          <Button size="lg" className="shadow-professional">
+          <Button size="lg" className="shadow-professional" onClick={openBookingModal}>
             Book a Compliance Call
           </Button>
           <p className="text-sm text-muted-foreground mt-4">
@@ -185,7 +187,7 @@ const AuditRegulatoryResponse = () => {
             You don't need to handle compliance crises alone. Book a call and get immediate, practical support to reduce risk and respond professionally.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="shadow-professional">
+            <Button size="lg" variant="secondary" className="shadow-professional" onClick={openBookingModal}>
               Book a Call
             </Button>
             <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">

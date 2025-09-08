@@ -3,8 +3,10 @@ import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Stethoscope, Shield, BookOpen, Clock, CheckCircle2, AlertCircle, FileText } from "lucide-react";
+import { useBookingModal } from "@/components/ui/booking-modal";
 
 const ClinicalDocumentationTraining = () => {
+  const { open: openBookingModal } = useBookingModal();
   const targetAudience = [
     {
       icon: Stethoscope,
@@ -80,7 +82,7 @@ const ClinicalDocumentationTraining = () => {
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
             Equip your care team with clear, compliant, and defensible documentation practices — delivered by a legal advisor who understands the frontline.
           </p>
-          <Button size="lg" className="shadow-professional">
+          <Button size="lg" className="shadow-professional" onClick={openBookingModal}>
             Book a Training Session
           </Button>
         </div>
@@ -207,7 +209,7 @@ const ClinicalDocumentationTraining = () => {
             Whether you're booking team-wide training or just need help improving your forms, we'll tailor a session that protects your people — and your patients.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="shadow-professional">
+            <Button size="lg" variant="secondary" className="shadow-professional" onClick={openBookingModal}>
               Book a Training Session
             </Button>
             <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">

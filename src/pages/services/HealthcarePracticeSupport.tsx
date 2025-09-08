@@ -16,8 +16,10 @@ import {
   Heart,
   Clipboard
 } from "lucide-react";
+import { useBookingModal } from "@/components/ui/booking-modal";
 
 const HealthcarePracticeSupport = () => {
+  const { open: openBookingModal } = useBookingModal();
   const whoWeHelp = [
     { icon: Stethoscope, title: "General Practices & GP Clinics" },
     { icon: Heart, title: "Allied Health Services (physio, speech, OT, etc.)" },
@@ -73,7 +75,7 @@ const HealthcarePracticeSupport = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             Legal compliance and risk management for general practitioners, clinics, and allied health professionals across Queensland.
           </p>
-          <Button size="lg" className="text-lg px-8 py-6">
+          <Button size="lg" className="text-lg px-8 py-6" onClick={openBookingModal}>
             Book a Compliance Call
           </Button>
         </div>
@@ -193,7 +195,7 @@ const HealthcarePracticeSupport = () => {
             If you're a clinic manager, practice owner, or health team lead, you don't have to do it all alone. Book a call and let's review your biggest risks and quick wins — together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">Book a Call</Button>
+            <Button size="lg" className="text-lg px-8" onClick={openBookingModal}>Book a Call</Button>
             <Button variant="outline" size="lg" className="border-primary text-primary text-lg px-8">Ask a Question</Button>
             <Button variant="outline" size="lg" className="border-primary text-primary text-lg px-8">Chat on WhatsApp</Button>
           </div>

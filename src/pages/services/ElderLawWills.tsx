@@ -3,8 +3,10 @@ import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Heart, Shield, FileText, Scale, Home, CheckCircle2 } from "lucide-react";
+import { useBookingModal } from "@/components/ui/booking-modal";
 
 const ElderLawWills = () => {
+  const { open: openBookingModal } = useBookingModal();
   const targetAudience = [
     {
       icon: Users,
@@ -72,7 +74,7 @@ const ElderLawWills = () => {
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
             Get practical legal advice for wills, powers of attorney, guardianship, and aged care transitions — from someone who speaks your language and puts your family first.
           </p>
-          <Button size="lg" className="shadow-professional">
+          <Button size="lg" className="shadow-professional" onClick={openBookingModal}>
             Start Your Will Planning
           </Button>
         </div>
@@ -182,7 +184,7 @@ const ElderLawWills = () => {
             We make it easy to protect what matters most. Book a call to begin planning — or reach out with your questions. No pressure. Just trusted legal support when you need it.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="shadow-professional">
+            <Button size="lg" variant="secondary" className="shadow-professional" onClick={openBookingModal}>
               Book a Call
             </Button>
             <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">

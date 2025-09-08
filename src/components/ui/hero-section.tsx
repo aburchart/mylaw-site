@@ -1,7 +1,9 @@
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useBookingModal } from "@/components/ui/booking-modal";
 const HeroSection = () => {
+  const { open: openBookingModal } = useBookingModal();
   const trustPoints = ["No litigation - we help you avoid it", "Brisbane-based with international credentials", "Specialized in aged care & NDIS compliance"];
   return <section className="relative min-h-[90vh] flex items-center bg-gradient-hero overflow-hidden">
       {/* Background Pattern */}
@@ -39,7 +41,12 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="secondary" className="bg-secondary-warm hover:bg-secondary text-primary shadow-elevated">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="bg-secondary-warm hover:bg-secondary text-primary shadow-elevated"
+                onClick={openBookingModal}
+              >
                 Book a Compliance Call
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

@@ -3,8 +3,10 @@ import Footer from "@/components/ui/footer";
 import { Award, MapPin, Briefcase, GraduationCap, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useBookingModal } from "@/components/ui/booking-modal";
 
 const About = () => {
+  const { open: openBookingModal } = useBookingModal();
   const qualifications = [
     {
       icon: GraduationCap,
@@ -119,6 +121,7 @@ const About = () => {
                     size="lg" 
                     variant="secondary"
                     className="bg-secondary-warm hover:bg-secondary text-primary w-full"
+                    onClick={openBookingModal}
                   >
                     <Phone className="mr-2 h-5 w-5" />
                     Schedule Consultation

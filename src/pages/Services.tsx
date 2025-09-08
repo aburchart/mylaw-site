@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, CheckCircle, Stethoscope, FileSearch, BookOpen, Scale, Building } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useBookingModal } from "@/components/ui/booking-modal";
 
 const Services = () => {
+  const { open: openBookingModal } = useBookingModal();
   const services = [
     {
       title: "Aged Care Compliance Advisory",
@@ -116,7 +118,12 @@ const Services = () => {
           <p className="text-xl mb-8 opacity-90">
             Book a consultation to discuss your specific compliance needs and avoid costly regulatory issues.
           </p>
-          <Button size="lg" variant="secondary" className="shadow-professional">
+          <Button 
+            size="lg" 
+            variant="secondary" 
+            className="shadow-professional"
+            onClick={openBookingModal}
+          >
             Book a Compliance Call
           </Button>
         </div>

@@ -5,8 +5,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Shield, AlertTriangle, Users, FileCheck, Clock, Download, MessageCircle, Phone, Search } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useBookingModal } from "@/components/ui/booking-modal";
 
 const NDISComplianceAdvisory = () => {
+  const { open: openBookingModal } = useBookingModal();
   const commonTriggers = [
     { text: "A surprise or scheduled NDIS Commission audit", icon: Search },
     { text: "A request for evidence or service documentation", icon: FileCheck },
@@ -60,7 +62,7 @@ const NDISComplianceAdvisory = () => {
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
             Practical legal support for NDIS providers across Queensland — so you stay accredited, avoid clawbacks, and deliver quality support safely.
           </p>
-          <Button size="lg" className="shadow-professional">
+          <Button size="lg" className="shadow-professional" onClick={openBookingModal}>
             <Phone className="mr-2 h-5 w-5" />
             Book a Compliance Call
           </Button>
@@ -172,7 +174,7 @@ const NDISComplianceAdvisory = () => {
             Compliance doesn't have to be scary. Book a call today and let's walk through your concerns, policies, or audit prep — so you can focus on delivering excellent participant care.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="shadow-professional">
+            <Button size="lg" variant="secondary" className="shadow-professional" onClick={openBookingModal}>
               <Phone className="mr-2 h-5 w-5" />
               Book a Call
             </Button>

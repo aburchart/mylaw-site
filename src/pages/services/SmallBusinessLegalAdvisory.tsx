@@ -3,8 +3,10 @@ import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building, Users, Stethoscope, FileText, Shield, CheckCircle2, Briefcase } from "lucide-react";
+import { useBookingModal } from "@/components/ui/booking-modal";
 
 const SmallBusinessLegalAdvisory = () => {
+  const { open: openBookingModal } = useBookingModal();
   const targetAudience = [
     {
       icon: Stethoscope,
@@ -182,7 +184,7 @@ const SmallBusinessLegalAdvisory = () => {
             Whether you're just getting started or fixing gaps in your existing business, we're here to help you grow legally and confidently.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="shadow-professional">
+            <Button size="lg" variant="secondary" className="shadow-professional" onClick={openBookingModal}>
               Book a Call
             </Button>
             <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useBookingModal } from "@/components/ui/booking-modal";
 import logoImage from "@/assets/mylaw-logo.png";
 import {
   DropdownMenu,
@@ -14,6 +15,7 @@ import {
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { open: openBookingModal } = useBookingModal();
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -90,11 +92,14 @@ const Navigation = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="default" size="sm" className="shadow-professional" asChild>
-            <Link to="/contact">
-              <Phone className="mr-2 h-4 w-4" />
-              Book a Call
-            </Link>
+          <Button 
+            variant="default" 
+            size="sm" 
+            className="shadow-professional"
+            onClick={openBookingModal}
+          >
+            <Phone className="mr-2 h-4 w-4" />
+            Book a Call
           </Button>
         </div>
 
@@ -161,11 +166,17 @@ const Navigation = () => {
               </div>
             </div>
             
-            <Button variant="default" size="sm" className="w-full shadow-professional" asChild>
-              <Link to="/contact">
-                <Phone className="mr-2 h-4 w-4" />
-                Book a Call
-              </Link>
+            <Button 
+              variant="default" 
+              size="sm" 
+              className="w-full shadow-professional"
+              onClick={() => {
+                openBookingModal();
+                setIsOpen(false);
+              }}
+            >
+              <Phone className="mr-2 h-4 w-4" />
+              Book a Call
             </Button>
           </div>
         </div>

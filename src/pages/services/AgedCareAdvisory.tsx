@@ -5,8 +5,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Shield, AlertTriangle, Users, FileCheck, Clock, Download, MessageCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useBookingModal } from "@/components/ui/booking-modal";
 
 const AgedCareAdvisory = () => {
+  const { open: openBookingModal } = useBookingModal();
   const commonTriggers = [
     { text: "You've received a notice from the ACQSC", icon: AlertTriangle },
     { text: "You're preparing for a scheduled or surprise audit", icon: FileCheck },
@@ -60,7 +62,7 @@ const AgedCareAdvisory = () => {
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
             We help aged care facilities across Queensland stay compliant, prepare for audits, and protect residents — without the legal jargon.
           </p>
-          <Button size="lg" className="shadow-professional">
+          <Button size="lg" className="shadow-professional" onClick={openBookingModal}>
             <Phone className="mr-2 h-5 w-5" />
             Book a Compliance Call
           </Button>
@@ -172,7 +174,7 @@ const AgedCareAdvisory = () => {
             Book a compliance call today — we'll talk through your current risks and map out practical steps to keep your facility on track.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="secondary" className="shadow-professional">
+            <Button size="lg" variant="secondary" className="shadow-professional" onClick={openBookingModal}>
               <Phone className="mr-2 h-5 w-5" />
               Book a Call
             </Button>

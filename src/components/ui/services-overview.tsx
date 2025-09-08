@@ -10,8 +10,10 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useBookingModal } from "@/components/ui/booking-modal";
 
 const ServicesOverview = () => {
+  const { open: openBookingModal } = useBookingModal();
   const services = [
     {
       icon: Shield,
@@ -124,6 +126,7 @@ const ServicesOverview = () => {
                 size="lg" 
                 variant="secondary"
                 className="bg-secondary-warm hover:bg-secondary text-primary shadow-elevated"
+                onClick={openBookingModal}
               >
                 Book Free Consultation
               </Button>
