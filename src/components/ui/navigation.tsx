@@ -29,7 +29,7 @@ const Navigation = () => {
     { name: "Audit & Regulatory Response", href: "/services/audit-and-regulatory-response" },
     { name: "Clinical Documentation & Training", href: "/services/clinical-documentation-training" },
     { name: "Elder Law & Wills", href: "/services/elder-law-and-wills" },
-    { name: "Small Business Legal Advisory", href: "/services/small-business" },
+    { name: "Small Business Legal Advisory", href: "/services/small-business-legal-advisory" },
   ];
 
   const isActive = (href: string) => location.pathname === href;

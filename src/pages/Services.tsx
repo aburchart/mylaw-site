@@ -53,7 +53,7 @@ const Services = () => {
       title: "Small Business Legal Advisory",
       description: "Strategic legal guidance for healthcare startups and small practices navigating compliance requirements.",
       icon: Building,
-      href: "/services/small-business",
+      href: "/services/small-business-legal-advisory",
       color: "text-teal-600"
     }
   ];
