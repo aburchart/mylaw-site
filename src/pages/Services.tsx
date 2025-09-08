@@ -22,10 +22,10 @@ const Services = () => {
       color: "text-green-600"
     },
     {
-      title: "Healthcare Practice Compliance",
-      description: "Ensure your clinic meets all regulatory requirements with practice-specific compliance reviews and training.",
+      title: "Healthcare Practice Support",
+      description: "Legal compliance and risk management for general practitioners, clinics, and allied health professionals.",
       icon: Stethoscope,
-      href: "/services/healthcare-compliance",
+      href: "/services/healthcare-practice-support",
       color: "text-red-600"
     },
     {
