@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const ServicesOverview = () => {
   const services = [
@@ -17,42 +18,42 @@ const ServicesOverview = () => {
       title: "Aged Care Compliance",
       description: "Stay audit-ready with comprehensive compliance support for aged care facilities under the new Aged Care Act.",
       features: ["Audit preparation", "Staff training", "Documentation review"],
-      href: "/services/aged-care"
+      href: "/services/aged-care-advisory"
     },
     {
       icon: Users,
       title: "NDIS Compliance",
       description: "Protect your NDIS funding with proactive compliance strategies and regulatory support.",
       features: ["Quality standards", "Incident reporting", "Policy development"],
-      href: "/services/ndis"
+      href: "/services/ndis-compliance-advisory"
     },
     {
       icon: Heart,
       title: "Healthcare Practice Support",
       description: "Comprehensive legal support for medical practices, clinics, and healthcare providers.",
       features: ["Clinical governance", "Risk management", "Regulatory compliance"],
-      href: "/services/healthcare"
+      href: "/services/healthcare-practice-support"
     },
     {
       icon: FileCheck,
       title: "Audit & Regulatory Response",
       description: "Expert guidance when you receive notices from regulators or need to respond to audits.",
       features: ["Rapid response", "Documentation", "Compliance planning"],
-      href: "/services/audit-response"
+      href: "/services/audit-regulatory-response"
     },
     {
       icon: BookOpen,
       title: "Training & Education",
       description: "Practical compliance training for your team to prevent issues before they arise.",
       features: ["Staff workshops", "Policy training", "Best practices"],
-      href: "/services/training"
+      href: "/services/clinical-documentation-training"
     },
     {
       icon: FileText,
       title: "Wills & Estate Planning",
       description: "Compassionate legal support for elder clients and their families with estate planning needs.",
       features: ["Will drafting", "Power of attorney", "Estate administration"],
-      href: "/services/wills-estates"
+      href: "/services/elder-law-wills"
     }
   ];
 
@@ -97,9 +98,12 @@ const ServicesOverview = () => {
                   <Button 
                     variant="ghost" 
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                    asChild
                   >
-                    Learn More
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    <Link to={service.href} aria-label={`Learn more about ${service.title}`}>
+                      Learn More
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
