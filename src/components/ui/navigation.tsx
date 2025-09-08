@@ -90,9 +90,11 @@ const Navigation = () => {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Button variant="default" size="sm" className="shadow-professional">
-            <Phone className="mr-2 h-4 w-4" />
-            Book a Call
+          <Button variant="default" size="sm" className="shadow-professional" asChild>
+            <Link to="/contact">
+              <Phone className="mr-2 h-4 w-4" />
+              Book a Call
+            </Link>
           </Button>
         </div>
 
@@ -159,9 +161,11 @@ const Navigation = () => {
               </div>
             </div>
             
-            <Button variant="default" size="sm" className="w-full shadow-professional">
-              <Phone className="mr-2 h-4 w-4" />
-              Book a Call
+            <Button variant="default" size="sm" className="w-full shadow-professional" asChild>
+              <Link to="/contact">
+                <Phone className="mr-2 h-4 w-4" />
+                Book a Call
+              </Link>
             </Button>
           </div>
         </div>

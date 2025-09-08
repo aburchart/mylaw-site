@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Resources from "./pages/Resources";
+import Contact from "./pages/Contact";
 import AgedCareAdvisory from "./pages/services/AgedCareAdvisory";
 import NDISComplianceAdvisory from "./pages/services/NDISComplianceAdvisory";
 import HealthcarePracticeSupport from "./pages/services/HealthcarePracticeSupport";
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/resources" element={<Resources />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/services/aged-care-advisory" element={<AgedCareAdvisory />} />
           <Route path="/services/ndis-compliance-advisory" element={<NDISComplianceAdvisory />} />
           <Route path="/services/healthcare-practice-support" element={<HealthcarePracticeSupport />} />
