@@ -1,0 +1,195 @@
+import Navigation from "@/components/ui/navigation";
+import Footer from "@/components/ui/footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { CheckCircle, Shield, AlertTriangle, Users, FileCheck, Clock, Download, MessageCircle, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const AgedCareAdvisory = () => {
+  const commonTriggers = [
+    { text: "You've received a notice from the ACQSC", icon: AlertTriangle },
+    { text: "You're preparing for a scheduled or surprise audit", icon: FileCheck },
+    { text: "Staff complaints or family concerns are escalating", icon: Users },
+    { text: "You're unsure if your policies meet updated standards", icon: Shield },
+    { text: "A leadership change has exposed compliance gaps", icon: AlertTriangle },
+    { text: "You want to prevent patient harm or ombudsman complaints", icon: CheckCircle }
+  ];
+
+  const services = [
+    "Policy and procedure review & drafting",
+    "Staff training on resident rights, consent, and safety",
+    "Clinical documentation audits",
+    "Risk assessment for regulatory gaps",
+    "On-call support during audit season",
+    "Preparing evidence bundles and regulator responses",
+    "Advice on privacy, incident reporting, and governance"
+  ];
+
+  const differentiators = [
+    "Former hospital in-house legal counsel",
+    "Dual-qualified (Australia, NZ, Canada)",
+    "Fluent in clinical documentation and aged care standards",
+    "We explain legal risk in plain English — no courtroom jargon",
+    "We focus on preventing harm and keeping your facility running smoothly"
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      
+      {/* Breadcrumbs */}
+      <div className="border-b">
+        <div className="container py-3">
+          <nav className="flex text-sm text-muted-foreground">
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <span className="mx-2">&gt;</span>
+            <Link to="/services" className="hover:text-primary transition-colors">Services</Link>
+            <span className="mx-2">&gt;</span>
+            <span className="text-foreground">Aged Care Compliance Advisory</span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="py-16 px-4 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+        <div className="container max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            Stay Accredited. Avoid Complaints. Focus on Quality Care.
+          </h1>
+          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+            We help aged care facilities across Queensland stay compliant, prepare for audits, and protect residents — without the legal jargon.
+          </p>
+          <Button size="lg" className="shadow-professional">
+            <Phone className="mr-2 h-5 w-5" />
+            Book a Compliance Call
+          </Button>
+        </div>
+      </section>
+
+      {/* Introduction */}
+      <section className="py-16 px-4">
+        <div className="container max-w-4xl mx-auto">
+          <div className="prose prose-lg max-w-none text-muted-foreground">
+            <p className="text-lg leading-relaxed mb-6">
+              Operating an aged care facility comes with constant regulatory pressure — from evolving laws to last-minute audit notices. At MyLaw Solutions, we partner with Queensland providers to deliver practical, compliance-focused legal support tailored to the aged care sector.
+            </p>
+            <p className="text-lg leading-relaxed">
+              Whether you're updating policies, training staff, or responding to the Aged Care Quality and Safety Commission (ACQSC), we make sure you meet your obligations and stay audit-ready — without putting your accreditation or funding at risk.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Common Triggers */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="container max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">When Clients Call Us</h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {commonTriggers.map((trigger, index) => {
+              const IconComponent = trigger.icon;
+              return (
+                <Card key={index} className="border-2 hover:border-primary/20 transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="mx-auto mb-4 p-3 rounded-full bg-primary/10 w-fit">
+                      <IconComponent className="h-6 w-6 text-primary" />
+                    </div>
+                    <p className="text-sm leading-relaxed">{trigger.text}</p>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* What We Help With */}
+      <section className="py-16 px-4">
+        <div className="container max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Our Aged Care Compliance Services Include:</h2>
+          </div>
+          <div className="grid gap-4">
+            {services.map((service, index) => (
+              <div key={index} className="flex items-start space-x-3 p-4 rounded-lg hover:bg-muted/30 transition-colors">
+                <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-lg">{service}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="container max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">What Makes MyLaw Solutions Different?</h2>
+          </div>
+          <div className="grid gap-4">
+            {differentiators.map((point, index) => (
+              <div key={index} className="flex items-start space-x-3 p-4 rounded-lg bg-background border">
+                <Shield className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-lg">{point}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lead Magnet */}
+      <section className="py-16 px-4">
+        <div className="container max-w-4xl mx-auto">
+          <Card className="border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-secondary/5">
+            <CardHeader className="text-center">
+              <div className="mx-auto mb-4 p-4 rounded-full bg-primary/10 w-fit">
+                <Download className="h-8 w-8 text-primary" />
+              </div>
+              <CardTitle className="text-2xl">Free Download: 5 Steps to Stay Audit-Ready in Aged Care</CardTitle>
+              <CardDescription className="text-lg">
+                Get our free checklist used by aged care managers across Queensland to prepare for spot audits and avoid funding risks.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="text-center">
+              <Button size="lg" variant="outline" className="shadow-professional">
+                <Download className="mr-2 h-5 w-5" />
+                Download the Checklist
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 px-4 bg-primary text-primary-foreground">
+        <div className="container max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Let's Make Your Next Audit Boring (In a Good Way)
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Book a compliance call today — we'll talk through your current risks and map out practical steps to keep your facility on track.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" variant="secondary" className="shadow-professional">
+              <Phone className="mr-2 h-5 w-5" />
+              Book a Call
+            </Button>
+            <Button size="lg" variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
+              <MessageCircle className="mr-2 h-5 w-5" />
+              Ask a Question
+            </Button>
+            <Button size="lg" variant="outline" className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10">
+              Chat on WhatsApp
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default AgedCareAdvisory;
