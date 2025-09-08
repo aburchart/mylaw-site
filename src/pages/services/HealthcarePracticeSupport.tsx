@@ -121,7 +121,7 @@ const HealthcarePracticeSupport = () => {
           <div className="grid md:grid-cols-2 gap-4">
             {keyServices.map((service, index) => (
               <div key={index} className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" />
+                <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-lg">{service}</span>
               </div>
             ))}
