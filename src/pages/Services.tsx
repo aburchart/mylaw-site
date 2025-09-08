@@ -46,7 +46,7 @@ const Services = () => {
       title: "Elder Law & Wills",
       description: "Protect your family's future with expert wills, estate planning, and power of attorney services.",
       icon: Scale,
-      href: "/services/elder-law",
+      href: "/services/elder-law-and-wills",
       color: "text-indigo-600"
     },
     {
