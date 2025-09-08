@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import Resources from "./pages/Resources";
 import AgedCareAdvisory from "./pages/services/AgedCareAdvisory";
 import NDISComplianceAdvisory from "./pages/services/NDISComplianceAdvisory";
 import HealthcarePracticeSupport from "./pages/services/HealthcarePracticeSupport";
@@ -27,10 +28,11 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/resources" element={<Resources />} />
           <Route path="/services/aged-care-advisory" element={<AgedCareAdvisory />} />
           <Route path="/services/ndis-compliance-advisory" element={<NDISComplianceAdvisory />} />
           <Route path="/services/healthcare-practice-support" element={<HealthcarePracticeSupport />} />
-          <Route path="/services/audit-and-regulatory-response" element={<AuditRegulatoryResponse />} />
+          <Route path="/services/audit-regulatory-response" element={<AuditRegulatoryResponse />} />
           <Route path="/services/clinical-documentation-training" element={<ClinicalDocumentationTraining />} />
           <Route path="/services/elder-law-and-wills" element={<ElderLawWills />} />
           <Route path="/services/small-business-legal-advisory" element={<SmallBusinessLegalAdvisory />} />
