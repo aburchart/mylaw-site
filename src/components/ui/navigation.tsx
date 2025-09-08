@@ -27,7 +27,7 @@ const Navigation = () => {
     { name: "NDIS Compliance Advisory", href: "/services/ndis-compliance-advisory" },
     { name: "Healthcare Practice Support", href: "/services/healthcare-practice-support" },
     { name: "Audit & Regulatory Response", href: "/services/audit-and-regulatory-response" },
-    { name: "Clinical Documentation & Training", href: "/services/training" },
+    { name: "Clinical Documentation & Training", href: "/services/clinical-documentation-training" },
     { name: "Elder Law & Wills", href: "/services/elder-law" },
     { name: "Small Business Legal Advisory", href: "/services/small-business" },
   ];

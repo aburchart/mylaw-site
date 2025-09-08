@@ -39,7 +39,7 @@ const Services = () => {
       title: "Clinical Documentation & Compliance Training",
       description: "Comprehensive staff training programs and documentation systems to maintain compliance standards.",
       icon: BookOpen,
-      href: "/services/training",
+      href: "/services/clinical-documentation-training",
       color: "text-orange-600"
     },
     {

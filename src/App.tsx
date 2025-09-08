@@ -10,6 +10,7 @@ import AgedCareAdvisory from "./pages/services/AgedCareAdvisory";
 import NDISComplianceAdvisory from "./pages/services/NDISComplianceAdvisory";
 import HealthcarePracticeSupport from "./pages/services/HealthcarePracticeSupport";
 import AuditRegulatoryResponse from "./pages/services/AuditRegulatoryResponse";
+import ClinicalDocumentationTraining from "./pages/services/ClinicalDocumentationTraining";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/services/ndis-compliance-advisory" element={<NDISComplianceAdvisory />} />
           <Route path="/services/healthcare-practice-support" element={<HealthcarePracticeSupport />} />
           <Route path="/services/audit-and-regulatory-response" element={<AuditRegulatoryResponse />} />
+          <Route path="/services/clinical-documentation-training" element={<ClinicalDocumentationTraining />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
