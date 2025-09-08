@@ -61,7 +61,7 @@ const HeroSection = () => {
 
           {/* Hero Visual */}
           <div className="relative animate-slide-up">
-            <Card className="p-8 bg-card/95 backdrop-blur shadow-elevated mx-[24px]">
+            <Card className="p-8 bg-card/95 backdrop-blur shadow-elevated mx-[24px] my-[24px]">
               <div className="space-y-6">
                 <div className="text-center">
                   <h3 className="heading-sm text-primary mb-2">Worried About Compliance?</h3>
