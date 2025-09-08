@@ -1,16 +1,9 @@
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-
 const HeroSection = () => {
-  const trustPoints = [
-    "No litigation - we help you avoid it",
-    "Brisbane-based with international credentials",
-    "Specialized in aged care & NDIS compliance"
-  ];
-
-  return (
-    <section className="relative min-h-[90vh] flex items-center bg-gradient-hero overflow-hidden">
+  const trustPoints = ["No litigation - we help you avoid it", "Brisbane-based with international credentials", "Specialized in aged care & NDIS compliance"];
+  return <section className="relative min-h-[90vh] flex items-center bg-gradient-hero overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-subtle opacity-10" />
       
@@ -38,29 +31,19 @@ const HeroSection = () => {
 
             {/* Trust Points */}
             <div className="space-y-3">
-              {trustPoints.map((point, index) => (
-                <div key={index} className="flex items-center space-x-3">
+              {trustPoints.map((point, index) => <div key={index} className="flex items-center space-x-3">
                   <CheckCircle className="h-5 w-5 text-secondary-warm flex-shrink-0" />
                   <span className="text-primary-foreground/90">{point}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="bg-secondary-warm hover:bg-secondary text-primary shadow-elevated"
-              >
+              <Button size="lg" variant="secondary" className="bg-secondary-warm hover:bg-secondary text-primary shadow-elevated">
                 Book a Compliance Call
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-              >
+              <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
                 Download Compliance Guide
               </Button>
             </div>
@@ -78,7 +61,7 @@ const HeroSection = () => {
 
           {/* Hero Visual */}
           <div className="relative animate-slide-up">
-            <Card className="p-8 bg-card/95 backdrop-blur shadow-elevated">
+            <Card className="p-8 bg-card/95 backdrop-blur shadow-elevated mx-[24px]">
               <div className="space-y-6">
                 <div className="text-center">
                   <h3 className="heading-sm text-primary mb-2">Worried About Compliance?</h3>
@@ -110,8 +93,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
