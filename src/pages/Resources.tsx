@@ -135,7 +135,7 @@ const Resources = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     <strong>Use:</strong> {resource.use}
                   </p>
-                  <Button className="w-full" variant="outline">
+                  <Button className="w-full" variant="default">
                     <Download className="mr-2 h-4 w-4" />
                     Download Now
                   </Button>
