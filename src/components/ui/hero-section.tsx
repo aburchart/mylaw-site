@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-subtle opacity-10" />
       
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mx-0">
           {/* Hero Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4">
