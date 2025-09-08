@@ -97,16 +97,14 @@ const About = () => {
 
             {/* Professional Photo & Quick Facts */}
             <div className="space-y-8">
-              {/* Placeholder for professional photo */}
+              {/* Professional photo */}
               <Card className="overflow-hidden">
-                <div className="aspect-[3/4] bg-gradient-primary flex items-center justify-center">
-                  <div className="text-center text-primary-foreground">
-                    <div className="w-32 h-32 bg-primary-foreground/20 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <Award className="w-16 h-16" />
-                    </div>
-                    <p className="text-sm opacity-80">Professional Photo</p>
-                    <p className="text-xs opacity-60">Coming Soon</p>
-                  </div>
+                <div className="aspect-[3/4]">
+                  <img 
+                    src="/src/assets/myla-portrait.jpeg" 
+                    alt="Myla Ruttan - Principal Legal Advisor at MyLaw Solutions"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </Card>
 
