@@ -43,7 +43,7 @@ const Contact = () => {
         {/* Booking Calendar Section */}
         <section className="mb-16">
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold mb-4">📅 Book a Compliance Call With Myla</h2>
+            <h2 className="text-2xl font-semibold mb-4">Book a Compliance Call With Myla</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Choose a time that suits you best using the calendar below. Same-day confirmations. 
               No pressure, no commitment — just clear advice.
