@@ -32,7 +32,7 @@ const Services = () => {
       title: "Audit & Regulatory Response",
       description: "Expert guidance through regulatory investigations, complaint responses, and audit preparation strategies.",
       icon: FileSearch,
-      href: "/services/audit-response",
+      href: "/services/audit-and-regulatory-response",
       color: "text-purple-600"
     },
     {

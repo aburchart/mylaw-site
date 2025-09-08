@@ -26,7 +26,7 @@ const Navigation = () => {
     { name: "Aged Care Compliance Advisory", href: "/services/aged-care-advisory" },
     { name: "NDIS Compliance Advisory", href: "/services/ndis-compliance-advisory" },
     { name: "Healthcare Practice Support", href: "/services/healthcare-practice-support" },
-    { name: "Audit & Regulatory Response", href: "/services/audit-response" },
+    { name: "Audit & Regulatory Response", href: "/services/audit-and-regulatory-response" },
     { name: "Clinical Documentation & Training", href: "/services/training" },
     { name: "Elder Law & Wills", href: "/services/elder-law" },
     { name: "Small Business Legal Advisory", href: "/services/small-business" },
