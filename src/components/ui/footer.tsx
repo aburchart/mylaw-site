@@ -48,8 +48,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Mail className="h-4 w-4 text-secondary-warm" />
-                <a href="mailto:info@mylawsolutions.com.au" className="hover:text-secondary-warm transition-colors">
-                  info@mylawsolutions.com.au
+                <a href="mailto:admin@mylawsolutions.com.au" className="hover:text-secondary-warm transition-colors">
+                  admin@mylawsolutions.com.au
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-sm">
