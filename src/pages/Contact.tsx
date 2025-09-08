@@ -90,8 +90,8 @@ const Contact = () => {
                 <Mail className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Email Myla</h3>
                 <Button variant="outline" className="w-full" asChild>
-                  <a href="mailto:hello@mylawsolutions.au">
-                    hello@mylawsolutions.au
+                  <a href="mailto:admin@mylawsolutions.com.au">
+                    admin@mylawsolutions.com.au
                   </a>
                 </Button>
               </CardContent>
