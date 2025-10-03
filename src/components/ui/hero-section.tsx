@@ -23,7 +23,7 @@ const HeroSection = () => {
               
               <h1 className="heading-xl text-primary-foreground">
                 Protect Your Practice.{" "}
-                <span className="text-secondary-warm">Avoid Litigation.</span>
+                <span className="text-secondary-warm"></span>
               </h1>
               
               <p className="body-lg text-primary-foreground/90 max-w-lg">
