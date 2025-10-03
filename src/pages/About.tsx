@@ -156,7 +156,7 @@ const About = () => {
                     <div className="md:col-span-2">
                       <p className="text-muted-foreground">
                         Served as in-house legal counsel for major hospital systems, managing 
-                        compliance, risk assessment, and regulatory matters. Developed expertise 
+                        compliance, risk, and regulatory matters. Developed expertise 
                         in healthcare regulations and patient safety protocols.
                       </p>
                     </div>
