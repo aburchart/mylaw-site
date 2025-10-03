@@ -11,7 +11,7 @@ const About = () => {
   const qualifications = [{
     icon: GraduationCap,
     title: "International Credentials",
-    description: "Licensed to practice law in Australia, New Zealand, and Canada"
+    description: "International legal qualification and training in Australia, New Zealand and Canada."
   }, {
     icon: Briefcase,
     title: "Healthcare Industry Experience",
