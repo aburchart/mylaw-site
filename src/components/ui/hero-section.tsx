@@ -7,7 +7,7 @@ const HeroSection = () => {
     open: openBookingModal
   } = useBookingModal();
   const trustPoints = ["No litigation - we help you avoid it", "Brisbane-based with international credentials", "Specialized in aged care & NDIS compliance"];
-  return <section className="relative min-h-[90vh] lg:min-h-[70vh] flex items-center bg-gradient-hero overflow-hidden">
+  return <section className="relative min-h-[90vh] flex items-center bg-gradient-hero overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-subtle opacity-10" />
       
@@ -15,14 +15,15 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center mx-0">
           {/* Hero Content */}
           <div className="space-y-8 animate-fade-in">
-            <div className="space-y-4 pt-8 lg:pt-0">
+            <div className="space-y-4 my-[5px]">
               <div className="inline-flex items-center space-x-2 bg-trust/60 text-primary px-4 py-2 rounded-full text-sm font-medium border border-primary/20">
                 <Shield className="h-4 w-4" />
                 <span>Compliance-Focused Advisory</span>
               </div>
               
               <h1 className="heading-xl text-primary-foreground">
-                Protect Your Practice.
+                Protect Your Practice.{" "}
+                <span className="text-secondary-warm">Avoid Litigation.</span>
               </h1>
               
               <p className="body-lg text-primary-foreground/90 max-w-lg">
@@ -54,9 +55,9 @@ const HeroSection = () => {
             {/* Quick Help */}
             <div className="pt-4 border-t border-primary-foreground/20">
               <p className="text-sm text-primary-foreground/80">
-                <strong>Urgent compliance question?</strong> Email us at{" "}
-                <a href="mailto:admin@mylawsolutions.com.au" className="text-secondary-warm hover:underline">
-                  admin@mylawsolutions.com.au
+                <strong>Urgent compliance question?</strong> Call us directly at{" "}
+                <a href="tel:+61700000000" className="text-secondary-warm hover:underline">
+                  (07) 0000 0000
                 </a>
               </p>
             </div>
