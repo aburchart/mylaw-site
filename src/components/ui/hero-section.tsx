@@ -55,9 +55,9 @@ const HeroSection = () => {
             {/* Quick Help */}
             <div className="pt-4 border-t border-primary-foreground/20">
               <p className="text-sm text-primary-foreground/80">
-                <strong>Urgent compliance question?</strong> Call us directly at{" "}
-                <a href="tel:+61700000000" className="text-secondary-warm hover:underline">
-                  (07) 0000 0000
+                <strong>Urgent compliance question?</strong> Book a call above or email:{" "}
+                <a href="mailto:admin@mylawsolutions.com.au" className="text-secondary-warm hover:underline">
+                  admin@mylawsolutions.com.au
                 </a>
               </p>
             </div>
