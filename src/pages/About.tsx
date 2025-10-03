@@ -42,7 +42,7 @@ const About = () => {
               Meet Myla Ruttan
             </h1>
             <p className="body-lg text-muted-foreground">
-              Brisbane's trusted consultant legal advisor helping healthcare organizations 
+              In Brisbane's trusted consultant legal advisor helping healthcare organizations 
               stay compliant and avoid litigation through proactive solutions.
             </p>
           </div>
