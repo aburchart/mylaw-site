@@ -191,7 +191,6 @@ const About = () => {
                     </div>
                     <div className="md:col-span-2">
                       <p className="text-muted-foreground">
-                        Established legal practice across Australia, New Zealand, and Canada. 
                         Built expertise in cross-jurisdictional compliance and international 
                         regulatory frameworks.
                       </p>
