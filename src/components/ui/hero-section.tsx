@@ -15,7 +15,7 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center mx-0">
           {/* Hero Content */}
           <div className="space-y-8 animate-fade-in">
-            <div className="space-y-4">
+            <div className="space-y-4 pt-8 lg:pt-0">
               <div className="inline-flex items-center space-x-2 bg-trust/60 text-primary px-4 py-2 rounded-full text-sm font-medium border border-primary/20">
                 <Shield className="h-4 w-4" />
                 <span>Compliance-Focused Advisory</span>
