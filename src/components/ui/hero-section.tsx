@@ -7,7 +7,7 @@ const HeroSection = () => {
     open: openBookingModal
   } = useBookingModal();
   const trustPoints = ["No litigation - we help you avoid it", "Brisbane-based with international credentials", "Specialized in aged care & NDIS compliance"];
-  return <section className="relative min-h-[90vh] flex items-center bg-gradient-hero overflow-hidden">
+  return <section className="relative min-h-[90vh] lg:min-h-[70vh] flex items-center bg-gradient-hero overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-subtle opacity-10" />
       
