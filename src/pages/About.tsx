@@ -173,7 +173,7 @@ const About = () => {
                     </div>
                     <div className="md:col-span-2">
                       <p className="text-muted-foreground">
-                        Specialized in aged care and NDIS compliance across multiple jurisdictions. 
+                        Specialised in aged care and NDIS compliance across multiple jurisdictions. 
                         Helped organizations navigate regulatory changes and implement best practices 
                         for sustainable compliance.
                       </p>
