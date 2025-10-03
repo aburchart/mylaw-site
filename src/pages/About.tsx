@@ -4,6 +4,7 @@ import { Award, MapPin, Briefcase, GraduationCap, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useBookingModal } from "@/components/ui/booking-modal";
+import profileImage from "@/assets/mruttan-profile.jpg";
 const About = () => {
   const {
     open: openBookingModal
@@ -85,7 +86,7 @@ const About = () => {
               {/* Professional photo */}
               <Card className="overflow-hidden">
                 <div className="aspect-[3/4]">
-                  <img src="/src/assets/myla-portrait.jpeg" alt="Myla Ruttan - Principal Legal Advisor at MyLaw Solutions" className="w-full h-full object-cover" />
+                  <img src={profileImage} alt="Myla Ruttan - Principal Legal Advisor at MyLaw Solutions" className="w-full h-full object-cover" />
                 </div>
               </Card>
 
