@@ -4,34 +4,28 @@ import { Award, MapPin, Briefcase, GraduationCap, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useBookingModal } from "@/components/ui/booking-modal";
-
 const About = () => {
-  const { open: openBookingModal } = useBookingModal();
-  const qualifications = [
-    {
-      icon: GraduationCap,
-      title: "International Legal Credentials",
-      description: "International legal qualification and training in Australia, New Zealand and Canada."
-    },
-    {
-      icon: Briefcase,
-      title: "Healthcare Industry Experience",
-      description: "Former in-house legal counsel at major hospital systems"
-    },
-    {
-      icon: Award,
-      title: "Compliance Specialization",
-      description: "Deep expertise in aged care, NDIS, and healthcare regulations"
-    },
-    {
-      icon: MapPin,
-      title: "Brisbane-Based Practice",
-      description: "Local knowledge of Queensland regulatory landscape"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const {
+    open: openBookingModal
+  } = useBookingModal();
+  const qualifications = [{
+    icon: GraduationCap,
+    title: "International Legal Credentials",
+    description: "Licensed to practice law in Australia, New Zealand, and Canada"
+  }, {
+    icon: Briefcase,
+    title: "Healthcare Industry Experience",
+    description: "Former in-house legal counsel at major hospital systems"
+  }, {
+    icon: Award,
+    title: "Compliance Specialization",
+    description: "Deep expertise in aged care, NDIS, and healthcare regulations"
+  }, {
+    icon: MapPin,
+    title: "Brisbane-Based Practice",
+    description: "Local knowledge of Queensland regulatory landscape"
+  }];
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
@@ -41,10 +35,7 @@ const About = () => {
             <h1 className="heading-xl text-primary">
               Meet Myla Ruttan
             </h1>
-            <p className="body-lg text-muted-foreground">
-              In Brisbane's trusted consultant legal advisor helping healthcare organizations 
-              stay compliant and avoid litigation through proactive solutions.
-            </p>
+            <p className="body-lg text-muted-foreground">In Brisbane's trusted consultant helping healthcare organizations stay compliant through proactive solutions.</p>
           </div>
         </div>
       </section>
@@ -61,17 +52,9 @@ const About = () => {
                 </h2>
                 
                 <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-                  <p>
-                    Unlike traditional law firms that focus on litigation, MyLaw Solutions takes a 
-                    proactive approach to regulatory legal challenges. As a former in-house hospital counsel, 
-                    I understand the unique pressures facing healthcare organisations today.
-                  </p>
+                  <p>MyLaw Solutions takes a proactive approach to regulatory legal challenges. As a former in-house hospital counsel, I understand the unique pressures facing healthcare organisations today.</p>
                   
-                  <p>
-                    My mission is simple: help you avoid legal problems before they start. Through 
-                    smart planning, comprehensive training, and robust documentation systems, we 
-                    work together to keep your organisation compliant and your focus on patient care.
-                  </p>
+                  <p>My mission is simple: help you avoid legal problems before they start. Through smart planning, comprehensive training, and robust systems, we work together to keep your organisations compliant and your focus on patient care.</p>
                   
                   <p>
                     With credentials across three countries and deep experience in healthcare 
@@ -102,11 +85,7 @@ const About = () => {
               {/* Professional photo */}
               <Card className="overflow-hidden">
                 <div className="aspect-[3/4]">
-                  <img 
-                    src="/src/assets/myla-portrait.jpeg" 
-                    alt="Myla Ruttan - Principal Legal Advisor at MyLaw Solutions"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="/src/assets/myla-portrait.jpeg" alt="Myla Ruttan - Principal Legal Advisor at MyLaw Solutions" className="w-full h-full object-cover" />
                 </div>
               </Card>
 
@@ -117,12 +96,7 @@ const About = () => {
                   <p className="text-primary-foreground/90">
                     Book a free 15-minute consultation to discuss your compliance needs.
                   </p>
-                  <Button 
-                    size="lg" 
-                    variant="secondary"
-                    className="bg-secondary-warm hover:bg-secondary text-primary w-full"
-                    onClick={openBookingModal}
-                  >
+                  <Button size="lg" variant="secondary" className="bg-secondary-warm hover:bg-secondary text-primary w-full" onClick={openBookingModal}>
                     <Phone className="mr-2 h-5 w-5" />
                     Schedule Consultation
                   </Button>
@@ -148,9 +122,8 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {qualifications.map((qual, index) => {
-              const IconComponent = qual.icon;
-              return (
-                <Card key={index} className="text-center hover:shadow-card transition-shadow">
+            const IconComponent = qual.icon;
+            return <Card key={index} className="text-center hover:shadow-card transition-shadow">
                   <CardContent className="pt-6">
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="h-8 w-8 text-primary" />
@@ -158,9 +131,8 @@ const About = () => {
                     <h3 className="font-semibold mb-2">{qual.title}</h3>
                     <p className="text-sm text-muted-foreground">{qual.description}</p>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
         </div>
       </section>
@@ -219,7 +191,7 @@ const About = () => {
                     </div>
                     <div className="md:col-span-2">
                       <p className="text-muted-foreground">
-                        Established legal practice expertise across Australia, New Zealand, and Canada. 
+                        Established legal practice across Australia, New Zealand, and Canada. 
                         Built expertise in cross-jurisdictional compliance and international 
                         regulatory frameworks.
                       </p>
@@ -233,8 +205,6 @@ const About = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
