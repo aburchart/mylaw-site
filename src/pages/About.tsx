@@ -10,7 +10,7 @@ const About = () => {
   } = useBookingModal();
   const qualifications = [{
     icon: GraduationCap,
-    title: "International Legal Credentials",
+    title: "International Credentials",
     description: "Licensed to practice law in Australia, New Zealand, and Canada"
   }, {
     icon: Briefcase,
