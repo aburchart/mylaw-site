@@ -54,7 +54,7 @@ export const BookingModalProvider: React.FC<BookingModalProviderProps> = ({ chil
     <BookingModalContext.Provider value={value}>
       {children}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-4xl w-full h-[80vh] max-h-[800px] p-0 flex flex-col">
+        <DialogContent className="max-w-4xl w-full h-[80vh] max-h-[800px] p-0 flex flex-col overflow-hidden">
           <DialogHeader className="p-6 pb-0 flex-shrink-0">
             <div className="flex items-center justify-between">
               <DialogTitle className="text-xl font-semibold">
