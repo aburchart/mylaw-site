@@ -11,7 +11,7 @@ const About = () => {
     {
       icon: GraduationCap,
       title: "International Legal Credentials",
-      description: "Licensed to practice law in Australia, New Zealand, and Canada"
+      description: "International legal qualification and training in Australia, New Zealand and Canada."
     },
     {
       icon: Briefcase,
@@ -42,7 +42,7 @@ const About = () => {
               Meet Myla Ruttan
             </h1>
             <p className="body-lg text-muted-foreground">
-              Brisbane's trusted legal advisor helping healthcare organizations 
+              Brisbane's trusted consultant legal advisor helping healthcare organizations 
               stay compliant and avoid litigation through proactive solutions.
             </p>
           </div>
@@ -63,14 +63,14 @@ const About = () => {
                 <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
                   <p>
                     Unlike traditional law firms that focus on litigation, MyLaw Solutions takes a 
-                    proactive approach to legal challenges. As a former in-house hospital counsel, 
-                    I understand the unique pressures facing healthcare organizations today.
+                    proactive approach to regulatory legal challenges. As a former in-house hospital counsel, 
+                    I understand the unique pressures facing healthcare organisations today.
                   </p>
                   
                   <p>
                     My mission is simple: help you avoid legal problems before they start. Through 
                     smart planning, comprehensive training, and robust documentation systems, we 
-                    work together to keep your organization compliant and your focus on patient care.
+                    work together to keep your organisation compliant and your focus on patient care.
                   </p>
                   
                   <p>
@@ -219,7 +219,7 @@ const About = () => {
                     </div>
                     <div className="md:col-span-2">
                       <p className="text-muted-foreground">
-                        Established legal practice across Australia, New Zealand, and Canada. 
+                        Established legal practice expertise across Australia, New Zealand, and Canada. 
                         Built expertise in cross-jurisdictional compliance and international 
                         regulatory frameworks.
                       </p>

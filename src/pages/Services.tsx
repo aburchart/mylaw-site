@@ -43,20 +43,6 @@ const Services = () => {
       icon: BookOpen,
       href: "/services/clinical-documentation-training",
       color: "text-orange-600"
-    },
-    {
-      title: "Elder Law & Wills",
-      description: "Protect your family's future with expert wills, estate planning, and power of attorney services.",
-      icon: Scale,
-      href: "/services/elder-law-and-wills",
-      color: "text-indigo-600"
-    },
-    {
-      title: "Small Business Legal Advisory",
-      description: "Strategic legal guidance for healthcare startups and small practices navigating compliance requirements.",
-      icon: Building,
-      href: "/services/small-business-legal-advisory",
-      color: "text-teal-600"
     }
   ];
 
