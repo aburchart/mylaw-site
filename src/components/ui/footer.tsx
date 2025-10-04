@@ -1,6 +1,7 @@
 import { Scale, Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import logoImage from "@/assets/mylaw-logo.png";
 
 const Footer = () => {
   const serviceLinks = [
@@ -24,10 +25,11 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2">
-              <Scale className="h-8 w-8" />
-              <span className="text-xl font-bold">MyLaw Solutions</span>
-            </div>
+            <img 
+              src={logoImage} 
+              alt="MyLaw Solutions Logo" 
+              className="h-10 w-auto"
+            />
             
             <p className="text-primary-foreground/80 leading-relaxed">
               Brisbane's trusted legal advisors specializing in compliance for aged care, 
