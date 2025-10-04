@@ -68,6 +68,7 @@ const Footer = () => {
                 <Link
                   key={index}
                   to={link.href}
+                  onClick={() => window.scrollTo(0, 0)}
                   className="block text-sm text-primary-foreground/80 hover:text-secondary-warm transition-colors"
                 >
                   {link.name}
@@ -84,6 +85,7 @@ const Footer = () => {
                 <Link
                   key={index}
                   to={link.href}
+                  onClick={() => window.scrollTo(0, 0)}
                   className="block text-sm text-primary-foreground/80 hover:text-secondary-warm transition-colors"
                 >
                   {link.name}
@@ -139,13 +141,13 @@ const Footer = () => {
         <div className="container py-6">
           <div className="flex justify-center md:justify-end items-center">
             <div className="flex space-x-6 text-sm">
-              <Link to="/privacy" className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
+              <Link to="/privacy" onClick={() => window.scrollTo(0, 0)} className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
+              <Link to="/terms" onClick={() => window.scrollTo(0, 0)} className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/disclaimer" className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
+              <Link to="/disclaimer" onClick={() => window.scrollTo(0, 0)} className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
                 Legal Disclaimer
               </Link>
             </div>
