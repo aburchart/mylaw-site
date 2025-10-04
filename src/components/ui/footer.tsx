@@ -4,12 +4,11 @@ import { Button } from "@/components/ui/button";
 
 const Footer = () => {
   const serviceLinks = [
-    { name: "Aged Care Compliance", href: "/services/aged-care" },
-    { name: "NDIS Compliance", href: "/services/ndis" },
-    { name: "Healthcare Practice Support", href: "/services/healthcare" },
-    { name: "Audit & Regulatory Response", href: "/services/audit-response" },
-    { name: "Training & Education", href: "/services/training" },
-    { name: "Wills & Estate Planning", href: "/services/wills-estates" }
+    { name: "Aged Care Compliance", href: "/services/aged-care-advisory" },
+    { name: "NDIS Compliance", href: "/services/ndis-compliance-advisory" },
+    { name: "Healthcare Practice Support", href: "/services/healthcare-practice-support" },
+    { name: "Audit & Regulatory Response", href: "/services/audit-regulatory-response" },
+    { name: "Training & Education", href: "/services/clinical-documentation-training" }
   ];
 
   const resourceLinks = [
