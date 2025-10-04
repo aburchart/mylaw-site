@@ -122,7 +122,7 @@ const Footer = () => {
               </Button>
               <Button 
                 variant="outline" 
-                className="w-full border-primary text-primary hover:bg-primary/10"
+                className="w-full border-primary text-primary hover:bg-black hover:text-white hover:border-black"
               >
                 Download Free Guide
               </Button>
