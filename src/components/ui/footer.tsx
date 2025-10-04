@@ -136,16 +136,7 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-primary-foreground/20">
         <div className="container py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-primary-foreground/60">
-              <p>
-                © 2024 MyLaw Solutions. All rights reserved. 
-                <span className="block md:inline md:ml-2">
-                  ABN: [TO BE ADDED] | Legal Practice: [TO BE ADDED]
-                </span>
-              </p>
-            </div>
-            
+          <div className="flex justify-center md:justify-end items-center">
             <div className="flex space-x-6 text-sm">
               <Link to="/privacy" className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
                 Privacy Policy
