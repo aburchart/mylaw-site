@@ -75,7 +75,7 @@ const AuditRegulatoryResponse = () => {
             Got a Notice From the Regulator? Don't Panic. We'll Guide You.
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
-            MyLaw Solutions helps aged care and NDIS providers respond quickly and correctly to audits, complaints, and compliance investigations — with calm, clear legal support.
+            MyLaw Solutions helps aged care and NDIS providers respond quickly and correctly to audits, complaints, and compliance investigations — with calm and clear support.
           </p>
           <Button size="lg" className="shadow-professional" onClick={openBookingModal}>
             Book a Compliance Call

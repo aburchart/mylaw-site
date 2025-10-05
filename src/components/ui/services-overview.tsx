@@ -17,14 +17,14 @@ const ServicesOverview = () => {
   const services = [
     {
       icon: Shield,
-      title: "Aged Care Compliance",
+      title: "Aged Care Risk Management & Regulatory Compliance",
       description: "Stay audit-ready with comprehensive compliance support for aged care facilities under the new Aged Care Act.",
       features: ["Audit preparation", "Staff training", "Documentation review"],
       href: "/services/aged-care-advisory"
     },
     {
       icon: Users,
-      title: "NDIS Compliance",
+      title: "NDIS Risk Management & Regulatory Compliance",
       description: "Protect your NDIS funding with proactive compliance strategies and regulatory support.",
       features: ["Quality standards", "Incident reporting", "Policy development"],
       href: "/services/ndis-compliance-advisory"
@@ -32,7 +32,7 @@ const ServicesOverview = () => {
     {
       icon: Heart,
       title: "Healthcare Practice Support",
-      description: "Comprehensive legal support for medical practices, clinics, and healthcare providers.",
+      description: "Comprehensive compliance support for medical practices, clinics, and healthcare providers.",
       features: ["Clinical governance", "Risk management", "Regulatory compliance"],
       href: "/services/healthcare-practice-support"
     },
@@ -49,13 +49,6 @@ const ServicesOverview = () => {
       description: "Practical compliance training for your team to prevent issues before they arise.",
       features: ["Staff workshops", "Policy training", "Best practices"],
       href: "/services/clinical-documentation-training"
-    },
-    {
-      icon: FileText,
-      title: "Wills & Estate Planning",
-      description: "Compassionate legal support for elder clients and their families with estate planning needs.",
-      features: ["Will drafting", "Power of attorney", "Estate administration"],
-      href: "/services/elder-law-wills"
     }
   ];
 

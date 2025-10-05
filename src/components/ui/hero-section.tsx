@@ -27,7 +27,7 @@ const HeroSection = () => {
               </h1>
               
               <p className="body-lg text-primary-foreground/90 max-w-lg">
-                Brisbane's trusted legal advisors for aged care facilities, NDIS providers, 
+                Brisbane's trusted advisors for aged care facilities, NDIS providers, 
                 and healthcare practices. We help you stay compliant, reduce risk, and 
                 focus on what matters - caring for your clients.
               </p>
@@ -46,9 +46,6 @@ const HeroSection = () => {
               <Button size="lg" variant="secondary" className="bg-secondary-warm hover:bg-secondary text-primary shadow-elevated" onClick={openBookingModal}>
                 Book a Compliance Call
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
-                Download Compliance Guide
               </Button>
             </div>
 

@@ -74,35 +74,6 @@ const TrustSignals = () => {
           })}
         </div>
 
-        {/* Testimonials */}
-        <div className="space-y-8">
-          <div className="text-center">
-            <h3 className="heading-md text-primary mb-4">What Our Clients Say</h3>
-            <p className="text-muted-foreground">
-              Real feedback from healthcare providers we've helped stay compliant
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-card transition-shadow">
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <div className="text-primary text-2xl">"</div>
-                    <p className="text-muted-foreground italic">
-                      {testimonial.quote}
-                    </p>
-                    <div className="pt-4 border-t">
-                      <p className="font-semibold text-primary">{testimonial.author}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
         {/* Recognition */}
         <div className="mt-16 text-center">
           <p className="text-muted-foreground mb-6">Recognized by</p>

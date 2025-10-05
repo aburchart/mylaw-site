@@ -5,8 +5,8 @@ import logoImage from "@/assets/mylaw-logo.png";
 
 const Footer = () => {
   const serviceLinks = [
-    { name: "Aged Care Compliance", href: "/services/aged-care-advisory" },
-    { name: "NDIS Compliance", href: "/services/ndis-compliance-advisory" },
+    { name: "Aged Care Risk Management & Regulatory Compliance", href: "/services/aged-care-advisory" },
+    { name: "NDIS Risk Management & Regulatory Compliance", href: "/services/ndis-compliance-advisory" },
     { name: "Healthcare Practice Support", href: "/services/healthcare-practice-support" },
     { name: "Audit & Regulatory Response", href: "/services/audit-regulatory-response" },
     { name: "Training & Education", href: "/services/clinical-documentation-training" }
@@ -32,7 +32,7 @@ const Footer = () => {
             />
             
             <p className="text-primary-foreground/80 leading-relaxed">
-              Brisbane's trusted legal advisors specializing in compliance for aged care, 
+              Brisbane's trusted advisors specializing in compliance for aged care, 
               NDIS, and healthcare providers. We help you avoid litigation through smart planning.
             </p>
             
@@ -119,12 +119,6 @@ const Footer = () => {
                 className="w-full bg-secondary-warm hover:bg-secondary text-primary"
               >
                 Book Emergency Call
-              </Button>
-              <Button 
-                variant="outline" 
-                className="w-full border-primary text-primary hover:bg-black hover:text-white hover:border-black"
-              >
-                Download Free Guide
               </Button>
             </div>
             
