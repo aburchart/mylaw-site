@@ -18,8 +18,8 @@ const HeroSection = () => {
   }, []);
   const trustPoints = ["No litigation - we help you avoid it", "Brisbane-based with international credentials", "Specialized in aged care & NDIS compliance"];
   
-  // Calculate opacity based on scroll (fade out after 300px of scrolling)
-  const opacity = Math.max(1 - scrollY / 500, 0);
+  // Calculate opacity based on scroll (fade out gradually over 1000px)
+  const opacity = Math.max(1 - scrollY / 1000, 0);
 
   return <section 
     className="relative min-h-[90vh] flex items-center overflow-hidden transition-opacity duration-300"
