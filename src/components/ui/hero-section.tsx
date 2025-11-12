@@ -1,7 +1,7 @@
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { useBookingModal } from "@/components/ui/booking-modal";
+import agedCareHero from "@/assets/aged-care-hero.jpg";
 const HeroSection = () => {
   const {
     open: openBookingModal
@@ -62,35 +62,13 @@ const HeroSection = () => {
 
           {/* Hero Visual */}
           <div className="relative animate-slide-up">
-            <Card className="p-8 bg-card/95 backdrop-blur shadow-elevated mx-[24px] my-[24px]">
-              <div className="space-y-6">
-                <div className="text-center">
-                  <h3 className="heading-sm text-primary mb-2">Worried About Compliance?</h3>
-                  <p className="text-muted-foreground">
-                    Get peace of mind with our comprehensive audit checklist
-                  </p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3 p-3 bg-trust rounded-lg">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <span className="text-sm">Aged Care Act compliance</span>
-                  </div>
-                  <div className="flex items-center space-x-3 p-3 bg-trust rounded-lg">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <span className="text-sm">NDIS audit preparation</span>
-                  </div>
-                  <div className="flex items-center space-x-3 p-3 bg-trust rounded-lg">
-                    <CheckCircle className="h-5 w-5 text-primary" />
-                    <span className="text-sm">Documentation standards</span>
-                  </div>
-                </div>
-                
-                <Button className="w-full shadow-professional">
-                  Get Your Free Checklist
-                </Button>
-              </div>
-            </Card>
+            <div className="rounded-lg overflow-hidden shadow-elevated mx-[24px] my-[24px]">
+              <img 
+                src={agedCareHero} 
+                alt="Professional caregiver providing compassionate aged care support" 
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
