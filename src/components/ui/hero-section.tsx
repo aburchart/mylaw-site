@@ -1,13 +1,30 @@
+import { useState, useEffect } from "react";
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBookingModal } from "@/components/ui/booking-modal";
 import heroBackground from "@/assets/hero-background.jpg";
+
 const HeroSection = () => {
-  const {
-    open: openBookingModal
-  } = useBookingModal();
+  const { open: openBookingModal } = useBookingModal();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const trustPoints = ["No litigation - we help you avoid it", "Brisbane-based with international credentials", "Specialized in aged care & NDIS compliance"];
-  return <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+  
+  // Calculate opacity based on scroll (fade out after 300px of scrolling)
+  const opacity = Math.max(1 - scrollY / 500, 0);
+
+  return <section 
+    className="relative min-h-[90vh] flex items-center overflow-hidden transition-opacity duration-300"
+    style={{ opacity }}
+  >
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
