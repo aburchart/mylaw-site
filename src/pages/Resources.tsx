@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,8 +11,11 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Download, FileText, Calendar, ArrowRight, Mail } from "lucide-react";
+import { SubscriptionModal } from "@/components/ui/subscription-modal";
 
 const Resources = () => {
+  const [isSubscribeModalOpen, setIsSubscribeModalOpen] = useState(false);
+
   const downloadableResources = [
     {
       title: "The 3 C's of Informed Consent",
@@ -101,7 +105,11 @@ const Resources = () => {
               Free checklists, audit prep guides, and practical legal tips for aged care, NDIS, and healthcare providers
               — written in plain English and updated regularly.
             </p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90"
+              onClick={() => setIsSubscribeModalOpen(true)}
+            >
               <Mail className="mr-2 h-5 w-5" />
               Subscribe for Updates
             </Button>
@@ -179,7 +187,11 @@ const Resources = () => {
                 Browse All Articles
               </Button>
               <div>
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90"
+                  onClick={() => setIsSubscribeModalOpen(true)}
+                >
                   <Mail className="mr-2 h-5 w-5" />
                   Subscribe for Updates
                 </Button>
@@ -198,13 +210,22 @@ const Resources = () => {
               Get practical legal tips, compliance updates, and new tools delivered monthly — written by a qualified
               legal advisor, not a marketer.
             </p>
-            <Button size="lg" variant="secondary">
+            <Button 
+              size="lg" 
+              variant="secondary"
+              onClick={() => setIsSubscribeModalOpen(true)}
+            >
               <Mail className="mr-2 h-5 w-5" />
               Subscribe to Compliance Updates
             </Button>
           </div>
         </div>
       </section>
+
+      <SubscriptionModal
+        open={isSubscribeModalOpen}
+        onOpenChange={setIsSubscribeModalOpen}
+      />
     </div>
   );
 };
