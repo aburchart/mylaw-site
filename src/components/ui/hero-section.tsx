@@ -2,16 +2,31 @@ import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBookingModal } from "@/components/ui/booking-modal";
 import heroBackground from "@/assets/hero-background.jpg";
+import { useState, useEffect } from "react";
+
 const HeroSection = () => {
   const {
     open: openBookingModal
   } = useBookingModal();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const trustPoints = ["No litigation - we help you avoid it", "Brisbane-based with international credentials", "Specialized in aged care & NDIS compliance"];
   return <section className="relative min-h-[90vh] flex items-center overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBackground})` }}
+        style={{ 
+          backgroundImage: `url(${heroBackground})`,
+          transform: `translateY(${scrollY * 0.5}px)`
+        }}
       >
         <div className="absolute inset-0 bg-gradient-hero opacity-50" />
       </div>
