@@ -12,6 +12,8 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Download, FileText, Calendar, ArrowRight, Mail } from "lucide-react";
 import { SubscriptionModal } from "@/components/ui/subscription-modal";
+import Navigation from "@/components/ui/navigation";
+import Footer from "@/components/ui/footer";
 
 const Resources = () => {
   const [isSubscribeModalOpen, setIsSubscribeModalOpen] = useState(false);
@@ -77,7 +79,9 @@ const Resources = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Navigation */}
+      <Navigation />
+      
+      {/* Breadcrumb Navigation */}
       <nav className="border-b">
         <div className="container mx-auto px-4 py-4">
           <Breadcrumb>
@@ -226,6 +230,8 @@ const Resources = () => {
         open={isSubscribeModalOpen}
         onOpenChange={setIsSubscribeModalOpen}
       />
+      
+      <Footer />
     </div>
   );
 };
