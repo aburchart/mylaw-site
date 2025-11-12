@@ -52,14 +52,13 @@ export function SubscriptionModal({ open, onOpenChange }: SubscriptionModalProps
     setIsSubmitting(true);
     
     try {
-      await fetch(
+      const response = await fetch(
         "https://services.leadconnectorhq.com/hooks/SqRRlnoJ5Ppx0A0Tk8z2/webhook-trigger/7b08a1df-aadf-44af-a3fc-c9f345bf60f7",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          mode: "no-cors",
           body: JSON.stringify({
             name: data.name,
             email: data.email,
@@ -67,6 +66,10 @@ export function SubscriptionModal({ open, onOpenChange }: SubscriptionModalProps
           }),
         }
       );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
       toast({
         title: "Success!",
@@ -78,6 +81,7 @@ export function SubscriptionModal({ open, onOpenChange }: SubscriptionModalProps
         onOpenChange(false);
       }, 500);
     } catch (error) {
+      console.error("Webhook submission error:", error);
       toast({
         title: "Subscription Failed",
         description: "Failed to subscribe. Please check your connection and try again.",
