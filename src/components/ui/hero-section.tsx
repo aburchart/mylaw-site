@@ -1,18 +1,23 @@
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBookingModal } from "@/components/ui/booking-modal";
-import agedCareHero from "@/assets/aged-care-hero.jpg";
+import heroBackground from "@/assets/hero-background.jpg";
 const HeroSection = () => {
   const {
     open: openBookingModal
   } = useBookingModal();
   const trustPoints = ["No litigation - we help you avoid it", "Brisbane-based with international credentials", "Specialized in aged care & NDIS compliance"];
-  return <section className="relative min-h-[90vh] flex items-center bg-gradient-hero overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-subtle opacity-10" />
+  return <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/70 to-black/50" />
+      </div>
       
       <div className="container relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mx-0">
+        <div className="max-w-3xl mx-auto lg:mx-0">
           {/* Hero Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="space-y-4 my-[20px]">
@@ -21,12 +26,12 @@ const HeroSection = () => {
                 <span>Compliance-Focused Advisory</span>
               </div>
               
-              <h1 className="heading-xl text-primary-foreground">
+              <h1 className="heading-xl text-white">
                 Protect Your Practice.{" "}
                 <span className="text-secondary-warm"></span>
               </h1>
               
-              <p className="body-lg text-primary-foreground/90 max-w-lg">
+              <p className="body-lg text-white/90 max-w-lg">
                 Brisbane's trusted advisors for aged care facilities, NDIS providers, 
                 and healthcare practices. We help you stay compliant, reduce risk, and 
                 focus on what matters - caring for your clients.
@@ -37,7 +42,7 @@ const HeroSection = () => {
             <div className="space-y-3">
               {trustPoints.map((point, index) => <div key={index} className="flex items-center space-x-3">
                   <CheckCircle className="h-5 w-5 text-secondary-warm flex-shrink-0" />
-                  <span className="text-primary-foreground/90">{point}</span>
+                  <span className="text-white/90">{point}</span>
                 </div>)}
             </div>
 
@@ -50,24 +55,13 @@ const HeroSection = () => {
             </div>
 
             {/* Quick Help */}
-            <div className="pt-4 border-t border-primary-foreground/20">
-              <p className="text-sm text-primary-foreground/80">
+            <div className="pt-4 border-t border-white/20">
+              <p className="text-sm text-white/80">
                 <strong>Urgent compliance question?</strong> Book a call above or email:{" "}
                 <a href="mailto:admin@mylawsolutions.com.au" className="text-secondary-warm hover:underline">
                   admin@mylawsolutions.com.au
                 </a>
               </p>
-            </div>
-          </div>
-
-          {/* Hero Visual */}
-          <div className="relative animate-slide-up">
-            <div className="rounded-lg overflow-hidden shadow-elevated mx-[24px] my-[24px]">
-              <img 
-                src={agedCareHero} 
-                alt="Professional caregiver providing compassionate aged care support" 
-                className="w-full h-auto object-cover"
-              />
             </div>
           </div>
         </div>
