@@ -13,7 +13,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${heroBackground})` }}
       >
-        <div className="absolute inset-0 bg-gradient-hero opacity-25" />
+        <div className="absolute inset-0 bg-gradient-hero opacity-50" />
       </div>
       
       <div className="container relative z-10">
