@@ -136,9 +136,9 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
-  html {
+  /* html {
     scroll-behavior: smooth;
-  }
+  } */
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
