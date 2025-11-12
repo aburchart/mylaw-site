@@ -18,16 +18,16 @@ const Resources = () => {
       description: "For: Healthcare practitioners and clinical staff",
       use: "Understand capacity, communication, and consent requirements for adult and minor patients",
       category: "Healthcare",
-      downloadUrl: "https://storage.googleapis.com/msgsndr/SqRRlnoJ5Ppx0A0Tk8z2/media/6914055f9af9065c5c0a674a.png"
+      downloadUrl: "https://storage.googleapis.com/msgsndr/SqRRlnoJ5Ppx0A0Tk8z2/media/6914055f9af9065c5c0a674a.png",
     },
     {
       title: "Common Pitfalls in Clinical Documentation",
       description: "For: Health practitioners and clinical teams",
       use: "Avoid documentation mistakes and protect your professional practice",
       category: "Clinical",
-      downloadUrl: "https://storage.googleapis.com/msgsndr/SqRRlnoJ5Ppx0A0Tk8z2/media/6914055f2f19bcae8a4fc2a9.png"
+      downloadUrl: "https://storage.googleapis.com/msgsndr/SqRRlnoJ5Ppx0A0Tk8z2/media/6914055f2f19bcae8a4fc2a9.png",
     },
-    {
+    /*{
       title: "10 Things to Do Before You Write Your Will",
       description: "For: Elder clients and families planning estates",
       use: "Organize personal info before seeing a lawyer",
@@ -40,7 +40,7 @@ const Resources = () => {
       use: "Understand key compliance areas from day one",
       category: "Business",
       downloadUrl: ""
-    },
+    },*/
   ];
 
   const blogPosts = [
@@ -131,10 +131,10 @@ const Resources = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     <strong>Use:</strong> {resource.use}
                   </p>
-                  <Button 
-                    className="w-full" 
+                  <Button
+                    className="w-full"
                     variant="default"
-                    onClick={() => resource.downloadUrl && window.open(resource.downloadUrl, '_blank')}
+                    onClick={() => resource.downloadUrl && window.open(resource.downloadUrl, "_blank")}
                     disabled={!resource.downloadUrl}
                   >
                     <Download className="mr-2 h-4 w-4" />
