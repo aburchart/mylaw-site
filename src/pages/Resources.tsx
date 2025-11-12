@@ -13,41 +13,33 @@ import { Download, FileText, Calendar, ArrowRight, Mail } from "lucide-react";
 
 const Resources = () => {
   const downloadableResources = [
-    /*{
-      title: "5 Steps to Stay Audit-Ready in Aged Care",
-      description: "For: Facility managers & care leads",
-      use: "Prepare for ACQSC audits and avoid surprises",
-      category: "Aged Care"
+    {
+      title: "The 3 C's of Informed Consent",
+      description: "For: Healthcare practitioners and clinical staff",
+      use: "Understand capacity, communication, and consent requirements for adult and minor patients",
+      category: "Healthcare",
+      downloadUrl: "https://storage.googleapis.com/msgsndr/SqRRlnoJ5Ppx0A0Tk8z2/media/6914055f9af9065c5c0a674a.png"
     },
     {
-      title: "How to Stay NDIS Audit-Ready",
-      description: "For: NDIS providers & support coordinators", 
-      use: "Ensure documentation and policy compliance",
-      category: "NDIS"
+      title: "Common Pitfalls in Clinical Documentation",
+      description: "For: Health practitioners and clinical teams",
+      use: "Avoid documentation mistakes and protect your professional practice",
+      category: "Clinical",
+      downloadUrl: "https://storage.googleapis.com/msgsndr/SqRRlnoJ5Ppx0A0Tk8z2/media/6914055f2f19bcae8a4fc2a9.png"
     },
-    {
-      title: "Consent Documentation Checklist (Healthcare)",
-      description: "For: GPs, clinics, and allied health professionals",
-      use: "Make sure consent forms meet legal and clinical standards",
-      category: "Healthcare"
-    },
-    {
-      title: "7 Most Common Documentation Mistakes",
-      description: "For: Nurses, support staff, and compliance trainers",
-      use: "Prevent risk by improving frontline documentation habits",
-      category: "Clinical"
-    },*/
     {
       title: "10 Things to Do Before You Write Your Will",
       description: "For: Elder clients and families planning estates",
       use: "Organize personal info before seeing a lawyer",
       category: "Elder Law",
+      downloadUrl: ""
     },
     {
       title: "Legal Essentials for Starting a Health Business in QLD",
       description: "For: Startups and small business owners in care sectors",
       use: "Understand key compliance areas from day one",
       category: "Business",
+      downloadUrl: ""
     },
   ];
 
@@ -139,7 +131,12 @@ const Resources = () => {
                   <p className="text-sm text-muted-foreground mb-4">
                     <strong>Use:</strong> {resource.use}
                   </p>
-                  <Button className="w-full" variant="default">
+                  <Button 
+                    className="w-full" 
+                    variant="default"
+                    onClick={() => resource.downloadUrl && window.open(resource.downloadUrl, '_blank')}
+                    disabled={!resource.downloadUrl}
+                  >
                     <Download className="mr-2 h-4 w-4" />
                     Download Now
                   </Button>
