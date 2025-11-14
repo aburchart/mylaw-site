@@ -1,35 +1,43 @@
-import { Scale, Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Scale, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import logoImage from "@/assets/mylaw-logo.png";
-
 const Footer = () => {
-  const serviceLinks = [
-    { name: "Aged Care Risk Management & Regulatory Compliance", href: "/services/aged-care-advisory" },
-    { name: "NDIS Risk Management & Regulatory Compliance", href: "/services/ndis-compliance-advisory" },
-    { name: "Healthcare Practice Support", href: "/services/healthcare-practice-support" },
-    { name: "Audit & Regulatory Response", href: "/services/audit-regulatory-response" },
-    { name: "Training & Education", href: "/services/clinical-documentation-training" }
-  ];
-
-  const resourceLinks = [
-    { name: "Compliance Updates", href: "/resources" },
-    { name: "Free Checklists", href: "/resources/checklists" },
-    { name: "Regulatory News", href: "/resources/news" },
-    { name: "Training Materials", href: "/resources/training" }
-  ];
-
-  return (
-    <footer className="bg-primary text-primary-foreground">
+  const serviceLinks = [{
+    name: "Aged Care Risk Management & Regulatory Compliance",
+    href: "/services/aged-care-advisory"
+  }, {
+    name: "NDIS Risk Management & Regulatory Compliance",
+    href: "/services/ndis-compliance-advisory"
+  }, {
+    name: "Healthcare Practice Support",
+    href: "/services/healthcare-practice-support"
+  }, {
+    name: "Audit & Regulatory Response",
+    href: "/services/audit-regulatory-response"
+  }, {
+    name: "Training & Education",
+    href: "/services/clinical-documentation-training"
+  }];
+  const resourceLinks = [{
+    name: "Compliance Updates",
+    href: "/resources"
+  }, {
+    name: "Free Checklists",
+    href: "/resources/checklists"
+  }, {
+    name: "Regulatory News",
+    href: "/resources/news"
+  }, {
+    name: "Training Materials",
+    href: "/resources/training"
+  }];
+  return <footer className="bg-primary text-primary-foreground">
       <div className="container py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
-            <img 
-              src={logoImage} 
-              alt="MyLaw Solutions Logo" 
-              className="h-10 w-auto"
-            />
+            <img src={logoImage} alt="MyLaw Solutions Logo" className="h-10 w-auto" />
             
             <p className="text-primary-foreground/80 leading-relaxed">
               Brisbane's trusted advisors specializing in compliance for aged care, 
@@ -54,8 +62,8 @@ const Footer = () => {
                 </a>
               </div>
               <div className="flex items-center space-x-3 text-sm">
-                <Clock className="h-4 w-4 text-secondary-warm" />
-                <span>Mon-Fri 9AM-5PM</span>
+                
+                
               </div>
             </div>
           </div>
@@ -64,16 +72,9 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Our Services</h3>
             <div className="space-y-2">
-              {serviceLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  to={link.href}
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="block text-sm text-primary-foreground/80 hover:text-secondary-warm transition-colors"
-                >
+              {serviceLinks.map((link, index) => <Link key={index} to={link.href} onClick={() => window.scrollTo(0, 0)} className="block text-sm text-primary-foreground/80 hover:text-secondary-warm transition-colors">
                   {link.name}
-                </Link>
-              ))}
+                </Link>)}
             </div>
           </div>
 
@@ -81,25 +82,14 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Resources</h3>
             <div className="space-y-2">
-              {resourceLinks.map((link, index) => (
-                <Link
-                  key={index}
-                  to={link.href}
-                  onClick={() => window.scrollTo(0, 0)}
-                  className="block text-sm text-primary-foreground/80 hover:text-secondary-warm transition-colors"
-                >
+              {resourceLinks.map((link, index) => <Link key={index} to={link.href} onClick={() => window.scrollTo(0, 0)} className="block text-sm text-primary-foreground/80 hover:text-secondary-warm transition-colors">
                   {link.name}
-                </Link>
-              ))}
+                </Link>)}
             </div>
             
             <div className="pt-4">
               <h4 className="font-medium mb-2">Quick Help</h4>
-              <Button 
-                variant="secondary" 
-                size="sm"
-                className="bg-secondary-warm hover:bg-secondary text-primary"
-              >
+              <Button variant="secondary" size="sm" className="bg-secondary-warm hover:bg-secondary text-primary">
                 <MessageCircle className="mr-2 h-4 w-4" />
                 WhatsApp Us
               </Button>
@@ -114,10 +104,7 @@ const Footer = () => {
             </p>
             
             <div className="space-y-3">
-              <Button 
-                variant="secondary" 
-                className="w-full bg-secondary-warm hover:bg-secondary text-primary"
-              >
+              <Button variant="secondary" className="w-full bg-secondary-warm hover:bg-secondary text-primary">
                 Book Emergency Call
               </Button>
             </div>
@@ -155,8 +142,6 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
