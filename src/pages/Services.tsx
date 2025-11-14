@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Shield, CheckCircle, Stethoscope, FileSearch, BookOpen, Scale, Building } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useBookingModal } from "@/components/ui/booking-modal";
+import servicesHeroImage from "@/assets/services-hero.jpg";
 
 const Services = () => {
   const { open: openBookingModal } = useBookingModal();
@@ -51,12 +52,21 @@ const Services = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
-        <div className="container max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+      <section className="relative py-24 px-4 min-h-[60vh] flex items-center">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ backgroundImage: `url(${servicesHeroImage})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/60" />
+        </div>
+        
+        {/* Content */}
+        <div className="container max-w-4xl mx-auto text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Legal Compliance & Advisory Services for Health, Disability, and Aged Care
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
             We help Queensland-based aged care facilities, NDIS providers, clinics, and health entrepreneurs meet legal and compliance standards. Explore our full range of services designed to prevent complaints, avoid funding loss, and support accreditation — with no litigation and no legal jargon.
           </p>
         </div>
