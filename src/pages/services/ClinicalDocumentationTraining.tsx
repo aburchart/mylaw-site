@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Stethoscope, Shield, BookOpen, Clock, CheckCircle2, AlertCircle, FileText } from "lucide-react";
 import { useBookingModal } from "@/components/ui/booking-modal";
+import servicesCareHero from "@/assets/services-care-hero.jpg";
 
 const ClinicalDocumentationTraining = () => {
   const { open: openBookingModal } = useBookingModal();
@@ -74,12 +75,21 @@ const ClinicalDocumentationTraining = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
-        <div className="container max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+      <section className="relative py-24 px-4 min-h-[60vh] flex items-center">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ backgroundImage: `url(${servicesCareHero})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/60" />
+        </div>
+        
+        {/* Content */}
+        <div className="container max-w-4xl mx-auto text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Training That Prevents Patient Harm (and Protects Your Staff)
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">
             Equip your care team with clear, compliant, and defensible documentation practices — delivered by a legal advisor who understands the frontline.
           </p>
           <Button size="lg" className="shadow-professional" onClick={openBookingModal}>
