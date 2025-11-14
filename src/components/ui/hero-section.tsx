@@ -3,33 +3,29 @@ import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBookingModal } from "@/components/ui/booking-modal";
 import heroBackground from "@/assets/hero-background.jpg";
-
 const HeroSection = () => {
-  const { open: openBookingModal } = useBookingModal();
+  const {
+    open: openBookingModal
+  } = useBookingModal();
   const [scrollY, setScrollY] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const trustPoints = ["No litigation - we help you avoid it", "Brisbane-based with international credentials", "Specialized in aged care & NDIS compliance"];
-  
+
   // Calculate opacity based on scroll (fade out gradually over 1000px)
   const opacity = Math.max(1 - scrollY / 1000, 0);
-
-  return <section 
-    className="relative min-h-[90vh] flex items-center overflow-hidden transition-opacity duration-300"
-    style={{ opacity }}
-  >
+  return <section className="relative min-h-[90vh] flex items-center overflow-hidden transition-opacity duration-300" style={{
+    opacity
+  }}>
       {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${heroBackground})` }}
-      >
+      <div className="absolute inset-0 bg-cover bg-center" style={{
+      backgroundImage: `url(${heroBackground})`
+    }}>
         <div className="absolute inset-0 bg-gradient-hero opacity-50" />
       </div>
       
@@ -48,9 +44,7 @@ const HeroSection = () => {
               </h1>
               
               <p className="body-lg text-white/90 max-w-lg">
-                Brisbane's trusted advisors for aged care facilities, NDIS providers, 
-                and healthcare practices. We help you stay compliant, reduce risk, and 
-                focus on what matters - caring for your clients.
+                MyLaw Solutions works with aged care providers, NDIS services, and healthcare practices across Queensland to help you stay compliant, avoid funding risks, and stay focused on delivering safe, high-quality care.
               </p>
             </div>
 
