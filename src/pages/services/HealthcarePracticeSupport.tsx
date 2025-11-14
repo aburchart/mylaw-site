@@ -17,6 +17,7 @@ import {
   Clipboard
 } from "lucide-react";
 import { useBookingModal } from "@/components/ui/booking-modal";
+import servicesCareHero from "@/assets/services-care-hero.jpg";
 
 const HealthcarePracticeSupport = () => {
   const { open: openBookingModal } = useBookingModal();
@@ -67,12 +68,21 @@ const HealthcarePracticeSupport = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+      <section className="relative py-24 px-4 min-h-[60vh] flex items-center">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ backgroundImage: `url(${servicesCareHero})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/60" />
+        </div>
+        
+        {/* Content */}
+        <div className="container max-w-4xl mx-auto text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Protect Your License. Keep Patient Care Safe.
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Legal compliance and risk management for general practitioners, clinics, and allied health professionals across Queensland.
           </p>
           <Button size="lg" className="text-lg px-8 py-6" onClick={openBookingModal}>

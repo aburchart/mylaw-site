@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { AlertTriangle, FileText, Shield, Clock, Users, CheckCircle2 } from "lucide-react";
 import { useBookingModal } from "@/components/ui/booking-modal";
+import servicesCareHero from "@/assets/services-care-hero.jpg";
 
 const AuditRegulatoryResponse = () => {
   const { open: openBookingModal } = useBookingModal();
@@ -69,18 +70,27 @@ const AuditRegulatoryResponse = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="py-16 px-4 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
-        <div className="container max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+      <section className="relative py-24 px-4 min-h-[60vh] flex items-center">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center" 
+          style={{ backgroundImage: `url(${servicesCareHero})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/60" />
+        </div>
+        
+        {/* Content */}
+        <div className="container max-w-4xl mx-auto text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Got a Notice From the Regulator? Don't Panic. We'll Guide You.
           </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">
             MyLaw Solutions helps aged care and NDIS providers respond quickly and correctly to audits, complaints, and compliance investigations — with calm and clear support.
           </p>
           <Button size="lg" className="shadow-professional" onClick={openBookingModal}>
             Book a Compliance Call
           </Button>
-          <p className="text-sm text-muted-foreground mt-4">
+          <p className="text-sm text-white/80 mt-4">
             Same-day response guaranteed
           </p>
         </div>
