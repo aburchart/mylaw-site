@@ -79,6 +79,59 @@ const About = () => {
                   </cite>
                 </CardContent>
               </Card>
+
+              {/* Professional Background */}
+              <div className="space-y-6">
+                <h3 className="heading-sm text-primary">Professional Background</h3>
+                
+                <div className="space-y-6">
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="space-y-3">
+                        <div className="flex items-start justify-between">
+                          <h4 className="font-semibold text-primary">Healthcare Legal Counsel</h4>
+                          <span className="text-sm text-muted-foreground">2018 - 2023</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          Served as in-house legal counsel for major hospital systems, managing 
+                          compliance, risk, and regulatory matters. Developed expertise 
+                          in healthcare regulations and patient safety protocols.
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="space-y-3">
+                        <div className="flex items-start justify-between">
+                          <h4 className="font-semibold text-primary">Regulatory Compliance Advisor</h4>
+                          <span className="text-sm text-muted-foreground">2015 - 2018</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          Specialised in aged care and NDIS compliance across multiple jurisdictions. 
+                          Built comprehensive training programs and audit response systems.
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="space-y-3">
+                        <div className="flex items-start justify-between">
+                          <h4 className="font-semibold text-primary">Corporate Legal Practice</h4>
+                          <span className="text-sm text-muted-foreground">2010 - 2015</span>
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          Practiced corporate and healthcare law across Australia, New Zealand, 
+                          and Canada. Developed deep understanding of international regulatory frameworks.
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
 
             {/* Professional Photo & Quick Facts */}
@@ -134,72 +187,6 @@ const About = () => {
                   </CardContent>
                 </Card>;
           })}
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Background */}
-      <section className="py-20">
-        <div className="container">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="heading-lg text-primary text-center mb-12">
-              Professional Background
-            </h2>
-            
-            <div className="space-y-8">
-              <Card>
-                <CardContent className="p-8">
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="space-y-2">
-                      <h3 className="font-semibold text-primary">Healthcare Legal Counsel</h3>
-                      <p className="text-sm text-muted-foreground">2018 - 2023</p>
-                    </div>
-                    <div className="md:col-span-2">
-                      <p className="text-muted-foreground">
-                        Served as in-house legal counsel for major hospital systems, managing 
-                        compliance, risk, and regulatory matters. Developed expertise 
-                        in healthcare regulations and patient safety protocols.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-8">
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="space-y-2">
-                      <h3 className="font-semibold text-primary">Regulatory Compliance Advisor</h3>
-                      <p className="text-sm text-muted-foreground">2015 - 2018</p>
-                    </div>
-                    <div className="md:col-span-2">
-                      <p className="text-muted-foreground">
-                        Specialised in aged care and NDIS compliance across multiple jurisdictions. 
-                        Helped organizations navigate regulatory changes and implement best practices 
-                        for sustainable compliance.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-8">
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <div className="space-y-2">
-                      <h3 className="font-semibold text-primary">Legal Practice Foundation</h3>
-                      <p className="text-sm text-muted-foreground">2010 - 2015</p>
-                    </div>
-                    <div className="md:col-span-2">
-                      <p className="text-muted-foreground">
-                        Built expertise in cross-jurisdictional compliance and international 
-                        regulatory frameworks.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
