@@ -117,7 +117,10 @@ const About = () => {
                   </Card>
                 </div>
               </div>
+            </div>
 
+            {/* Professional Photo & Quick Facts */}
+            <div className="space-y-8">
               {/* Professional Philosophy */}
               <Card className="bg-trust border-primary/20">
                 <CardContent className="p-6">
@@ -132,10 +135,7 @@ const About = () => {
                   </cite>
                 </CardContent>
               </Card>
-            </div>
 
-            {/* Professional Photo & Quick Facts */}
-            <div className="space-y-8">
               {/* Professional photo */}
               <Card className="overflow-hidden">
                 <div className="aspect-[3/4]">
