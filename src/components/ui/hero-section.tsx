@@ -44,8 +44,7 @@ const HeroSection = () => {
               </div>
               
               <h1 className="heading-xl text-white">
-                Protect Your Practice.{" "}
-                <span className="text-secondary-warm"></span>
+                Protect your organisation with clear, practical compliance support.
               </h1>
               
               <p className="body-lg text-white/90 max-w-lg">
