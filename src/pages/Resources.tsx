@@ -157,7 +157,7 @@ const Resources = () => {
       </section>
 
       {/* Blog/Articles Section */}
-      <section className="py-16">
+      {/*<section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">Latest Compliance Updates</h2>
@@ -200,7 +200,7 @@ const Resources = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Final CTA Section */}
       <section className="py-16 bg-primary text-primary-foreground">
