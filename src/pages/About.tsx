@@ -77,11 +77,7 @@ const About = () => {
                           <h4 className="font-semibold text-primary">Healthcare Legal Counsel</h4>
                           <span className="text-sm text-muted-foreground">2018 - 2023</span>
                         </div>
-                        <p className="text-sm text-muted-foreground">
-                          Served as in-house legal counsel for major hospital systems, managing 
-                          compliance, risk, and regulatory matters. Developed expertise 
-                          in healthcare regulations and patient safety protocols.
-                        </p>
+                        <p className="text-sm text-muted-foreground">Served as in-house legal counsel for major hospital and health services managing compliance. risk, and regulatory matters. Developed expertise in healthcare regulations and patient safety protocols.</p>
                       </div>
                     </CardContent>
                   </Card>
