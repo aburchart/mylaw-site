@@ -65,21 +65,6 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Professional Philosophy */}
-              <Card className="bg-trust border-primary/20">
-                <CardContent className="p-6">
-                  <h3 className="heading-sm text-primary mb-4">Our Philosophy</h3>
-                  <blockquote className="text-lg italic text-muted-foreground border-l-4 border-primary pl-4">
-                    "The best legal outcome is the one you never need. By staying ahead of 
-                    compliance requirements and regulatory changes, we help our clients focus 
-                    on what they do best - providing exceptional care."
-                  </blockquote>
-                  <cite className="text-sm text-primary font-medium mt-4 block">
-                    - Myla Ruttan, Principal
-                  </cite>
-                </CardContent>
-              </Card>
-
               {/* Professional Background */}
               <div className="space-y-6">
                 <h3 className="heading-sm text-primary">Professional Background</h3>
@@ -132,6 +117,21 @@ const About = () => {
                   </Card>
                 </div>
               </div>
+
+              {/* Professional Philosophy */}
+              <Card className="bg-trust border-primary/20">
+                <CardContent className="p-6">
+                  <h3 className="heading-sm text-primary mb-4">Our Philosophy</h3>
+                  <blockquote className="text-lg italic text-muted-foreground border-l-4 border-primary pl-4">
+                    "The best legal outcome is the one you never need. By staying ahead of 
+                    compliance requirements and regulatory changes, we help our clients focus 
+                    on what they do best - providing exceptional care."
+                  </blockquote>
+                  <cite className="text-sm text-primary font-medium mt-4 block">
+                    - Myla Ruttan, Principal
+                  </cite>
+                </CardContent>
+              </Card>
             </div>
 
             {/* Professional Photo & Quick Facts */}
