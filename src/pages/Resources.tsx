@@ -49,6 +49,7 @@ const Resources = () => {
     },*/
   ];
 
+  /*
   const blogPosts = [
     {
       title: "What to Do If You Receive a Notice From the Regulator",
@@ -76,11 +77,11 @@ const Resources = () => {
       excerpt: "Essential legal foundations for new healthcare and aged care businesses.",
     },
   ];
-
+*/
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Breadcrumb Navigation */}
       <nav className="border-b">
         <div className="container mx-auto px-4 py-4">
@@ -109,11 +110,7 @@ const Resources = () => {
               Free checklists, audit prep guides, and practical legal tips for aged care, NDIS, and healthcare providers
               — written in plain English and updated regularly.
             </p>
-            <Button 
-              size="lg" 
-              className="bg-primary hover:bg-primary/90"
-              onClick={() => setIsSubscribeModalOpen(true)}
-            >
+            <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setIsSubscribeModalOpen(true)}>
               <Mail className="mr-2 h-5 w-5" />
               Subscribe for Updates
             </Button>
@@ -191,8 +188,8 @@ const Resources = () => {
                 Browse All Articles
               </Button>
               <div>
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-primary hover:bg-primary/90"
                   onClick={() => setIsSubscribeModalOpen(true)}
                 >
@@ -214,11 +211,7 @@ const Resources = () => {
               Get practical legal tips, compliance updates, and new tools delivered monthly — written by a qualified
               legal advisor, not a marketer.
             </p>
-            <Button 
-              size="lg" 
-              variant="secondary"
-              onClick={() => setIsSubscribeModalOpen(true)}
-            >
+            <Button size="lg" variant="secondary" onClick={() => setIsSubscribeModalOpen(true)}>
               <Mail className="mr-2 h-5 w-5" />
               Subscribe to Compliance Updates
             </Button>
@@ -226,11 +219,8 @@ const Resources = () => {
         </div>
       </section>
 
-      <SubscriptionModal
-        open={isSubscribeModalOpen}
-        onOpenChange={setIsSubscribeModalOpen}
-      />
-      
+      <SubscriptionModal open={isSubscribeModalOpen} onOpenChange={setIsSubscribeModalOpen} />
+
       <Footer />
     </div>
   );
