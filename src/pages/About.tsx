@@ -78,9 +78,7 @@ const About = () => {
                           <span className="text-sm text-muted-foreground">2018 - 2023</span>
                         </div>
                         <p className="text-sm text-muted-foreground">
-                          Served as in-house legal counsel for major hospital systems, managing 
-                          compliance, risk, and regulatory matters. Developed expertise 
-                          in healthcare regulations and patient safety protocols.
+                          Served as in-house legal counsel for major hospital and health services managing compliance.
                         </p>
                       </div>
                     </CardContent>
