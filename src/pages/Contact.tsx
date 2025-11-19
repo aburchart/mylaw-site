@@ -102,8 +102,8 @@ const Contact = () => {
                 <Phone className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-2">Call Us</h3>
                 <Button variant="outline" className="w-full" asChild>
-                  <a href="tel:+61400000000">
-                    +61 4XX XXX XXX
+                  <a href="tel:+61728017099">
+                    (07) 2801 7099
                   </a>
                 </Button>
               </CardContent>
