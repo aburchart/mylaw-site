@@ -17,7 +17,7 @@ const Footer = () => {
     href: "/services/audit-regulatory-response"
   }, {
     name: "Training & Education",
-    href: "/services/clinical-documentation-training"
+    href: "/services/education-and-training"
   }];
   const resourceLinks = [{
     name: "Compliance Updates",

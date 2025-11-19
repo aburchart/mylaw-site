@@ -29,7 +29,7 @@ const Navigation = () => {
     { name: "NDIS Compliance Advisory", href: "/services/ndis-compliance-advisory" },
     { name: "Healthcare Practice Support", href: "/services/healthcare-practice-support" },
     { name: "Audit & Regulatory Response", href: "/services/audit-regulatory-response" },
-    { name: "Clinical Documentation & Training", href: "/services/clinical-documentation-training" },
+    { name: "Education and Training", href: "/services/education-and-training" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
