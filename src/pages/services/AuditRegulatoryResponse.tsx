@@ -5,55 +5,32 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { AlertTriangle, FileText, Shield, Clock, Users, CheckCircle2 } from "lucide-react";
 import { useBookingModal } from "@/components/ui/booking-modal";
 import servicesCareHero from "@/assets/services-care-hero.jpg";
-
 const AuditRegulatoryResponse = () => {
-  const { open: openBookingModal } = useBookingModal();
-  const triggers = [
-    {
-      icon: FileText,
-      text: "Received a formal notice or request for evidence"
-    },
-    {
-      icon: Shield,
-      text: "Facing a scheduled or surprise audit"
-    },
-    {
-      icon: AlertTriangle,
-      text: "Got a complaint from the ombudsman or a participant"
-    },
-    {
-      icon: CheckCircle2,
-      text: "Identified compliance issues during internal review"
-    },
-    {
-      icon: Users,
-      text: "Dealing with clinical issues due to inadequate clinical documentation or recordkeeping."
-    },
-    {
-      icon: Clock,
-      text: "Unsure how to respond to regulator timelines"
-    }
-  ];
-
-  const services = [
-    "Interpret notices and break down your obligations",
-    "Draft official response letters and submissions", 
-    "Organize your evidence and supporting documents",
-    "Help identify gaps in policies or training",
-    "Guide you through appeals, corrections, and follow-ups",
-    "Advise on how to prevent repeat findings"
-  ];
-
-  const whyChooseUs = [
-    "Deep experience in healthcare regulation",
-    "Dual-qualified (Australia, NZ, Canada)",
-    "Plain-English guidance, fast response times",
-    "Focused on keeping your doors open and your staff calm",
-    "No litigation — just clear, effective action plans"
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const {
+    open: openBookingModal
+  } = useBookingModal();
+  const triggers = [{
+    icon: FileText,
+    text: "Received a formal notice or request for evidence"
+  }, {
+    icon: Shield,
+    text: "Facing a scheduled or surprise audit"
+  }, {
+    icon: AlertTriangle,
+    text: "Got a complaint from the ombudsman or a participant"
+  }, {
+    icon: CheckCircle2,
+    text: "Identified compliance issues during internal review"
+  }, {
+    icon: Users,
+    text: "Dealing with clinical issues due to inadequate clinical documentation or recordkeeping."
+  }, {
+    icon: Clock,
+    text: "Unsure how to respond to regulator timelines"
+  }];
+  const services = ["Interpret notices and break down your obligations", "Draft official response letters and submissions", "Organize your evidence and supporting documents", "Help identify gaps in policies or training", "Guide you through appeals, corrections, and follow-ups", "Advise on how to prevent repeat findings"];
+  const whyChooseUs = ["Deep experience in healthcare regulation", "Dual-qualified (Australia, NZ, Canada)", "Plain-English guidance, fast response times", "Focused on keeping your doors open and your staff calm", "No litigation — just clear, effective action plans"];
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Breadcrumbs */}
@@ -72,10 +49,9 @@ const AuditRegulatoryResponse = () => {
       {/* Hero Section */}
       <section className="relative py-24 px-4 min-h-[60vh] flex items-center">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: `url(${servicesCareHero})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${servicesCareHero})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/60" />
         </div>
         
@@ -118,16 +94,14 @@ const AuditRegulatoryResponse = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {triggers.map((trigger, index) => {
-              const IconComponent = trigger.icon;
-              return (
-                <div key={index} className="flex items-start space-x-4 p-6 bg-background rounded-lg shadow-sm">
+            const IconComponent = trigger.icon;
+            return <div key={index} className="flex items-start space-x-4 p-6 bg-background rounded-lg shadow-sm">
                   <div className="flex-shrink-0">
                     <IconComponent className="h-6 w-6 text-primary mt-1" />
                   </div>
                   <p className="text-muted-foreground">{trigger.text}</p>
-                </div>
-              );
-            })}
+                </div>;
+          })}
           </div>
         </div>
       </section>
@@ -139,12 +113,10 @@ const AuditRegulatoryResponse = () => {
             How We Support You During a Regulator Response
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {services.map((service, index) => (
-              <div key={index} className="flex items-start space-x-4 p-6 bg-muted/30 rounded-lg">
+            {services.map((service, index) => <div key={index} className="flex items-start space-x-4 p-6 bg-muted/30 rounded-lg">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">{service}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -152,16 +124,12 @@ const AuditRegulatoryResponse = () => {
       {/* Why Choose MyLaw Solutions */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="container max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            You Don't Need a Litigator. You Need a Compliance Ally.
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">You Don't Need a Litigator. You Need a Compliance ally.</h2>
           <div className="space-y-4">
-            {whyChooseUs.map((point, index) => (
-              <div key={index} className="flex items-start space-x-4 p-4 bg-background rounded-lg">
+            {whyChooseUs.map((point, index) => <div key={index} className="flex items-start space-x-4 p-4 bg-background rounded-lg">
                 <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">{point}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -214,8 +182,6 @@ const AuditRegulatoryResponse = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default AuditRegulatoryResponse;
