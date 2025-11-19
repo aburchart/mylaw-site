@@ -87,10 +87,10 @@ const ClinicalDocumentationTraining = () => {
         {/* Content */}
         <div className="container max-w-4xl mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Training That Prevents Patient Harm (and Protects Your Staff)
+            Education and Training That Protects Your Team and Your Residents
           </h1>
           <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">
-            Equip your care team with clear, compliant, and defensible documentation practices — delivered by a legal advisor who understands the frontline.
+            Empower your care team with practical compliance training and best practice education — delivered by a legal adviser who understands the frontline.
           </p>
           <Button size="lg" className="shadow-professional" onClick={openBookingModal}>
             Book a Training Session
