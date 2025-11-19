@@ -42,7 +42,7 @@ const ClinicalDocumentationTraining = () => {
   ];
 
   const howItWorks = [
-    "Delivered in-person (Brisbane) or virtually across Queensland",
+    "Delivered in-person (Brisbane) or virtually across Australia",
     "Customised to your facility's procedures and risk areas",
     "Includes real case scenarios, roleplay, and sample records",
     "1-hour, half-day, or full-day options available",
