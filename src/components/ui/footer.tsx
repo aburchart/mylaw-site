@@ -135,7 +135,7 @@ const Footer = () => {
           </div>
           
           <div className="mt-4 pt-4 border-t border-primary-foreground/10">
-            <p className="text-xs text-primary-foreground/50 text-center md:text-left">Disclaimer: This website contains general information only and does not constitute legal advice. MyLaw Solutions does not provide legal services. For specific legal matters, please consult with a qualified legal professional.<strong>Disclaimer:</strong> This website contains general information only and does not constitute legal advice. 
+            <p className="text-xs text-primary-foreground/50 text-center md:text-left">Disclaimer: This website contains general information only and does not constitute legal advice. MyLaw Solutions does not provide legal services. For specific legal matters, please consult with a qualified legal professional<strong>Disclaimer:</strong> This website contains general information only and does not constitute legal advice. 
               MyLaw Solutions does not provide litigation services. For specific legal matters, please consult with a qualified legal professional.
             </p>
           </div>
