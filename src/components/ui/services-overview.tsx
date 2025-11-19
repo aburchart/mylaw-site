@@ -48,7 +48,7 @@ const ServicesOverview = () => {
       title: "Training & Education",
       description: "Practical compliance training for your team to prevent issues before they arise.",
       features: ["Staff workshops", "Policy training", "Best practices"],
-      href: "/services/clinical-documentation-training"
+      href: "/services/education-and-training"
     }
   ];
 

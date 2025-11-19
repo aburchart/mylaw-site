@@ -69,7 +69,7 @@ const ClinicalDocumentationTraining = () => {
             <span className="mx-2">&gt;</span>
             <span>Services</span>
             <span className="mx-2">&gt;</span>
-            <span className="text-foreground">Clinical Documentation & Compliance Training</span>
+            <span className="text-foreground">Education and Training</span>
           </nav>
         </div>
       </div>
