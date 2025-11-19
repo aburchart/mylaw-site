@@ -27,7 +27,7 @@ const AuditRegulatoryResponse = () => {
     },
     {
       icon: Users,
-      text: "Dealing with high staff turnover affecting documentation"
+      text: "Dealing with clinical issues due to inadequate clinical documentation or recordkeeping."
     },
     {
       icon: Clock,
