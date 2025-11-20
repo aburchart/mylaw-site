@@ -4,7 +4,7 @@ import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useBookingModal } from "@/components/ui/booking-modal";
-import logoImage from "@/assets/mylaw-logo.webp";
+import logoImage from "@/assets/mylaw-logo.png";
 import {
   DropdownMenu,
   DropdownMenuContent,

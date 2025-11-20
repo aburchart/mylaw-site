@@ -1,7 +1,7 @@
 import { Scale, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import logoImage from "@/assets/mylaw-logo.webp";
+import logoImage from "@/assets/mylaw-logo.png";
 const Footer = () => {
   const serviceLinks = [{
     name: "Aged Care Risk Management & Regulatory Compliance",
