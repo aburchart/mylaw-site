@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBookingModal } from "@/components/ui/booking-modal";
-import heroBackground from "@/assets/hero-background.jpg";
+import heroBackground from "@/assets/hero-background.webp";
 const HeroSection = () => {
   const {
     open: openBookingModal
