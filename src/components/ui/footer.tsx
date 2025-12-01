@@ -23,6 +23,9 @@ const Footer = () => {
     name: "Compliance Updates",
     href: "/resources"
   }, {
+    name: "Blog & Articles",
+    href: "/blog"
+  }, {
     name: "Free Checklists",
     href: "/resources/checklists"
   }, {
