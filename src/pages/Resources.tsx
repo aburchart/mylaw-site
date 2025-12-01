@@ -14,6 +14,7 @@ import { Download, FileText, Calendar, ArrowRight, Mail } from "lucide-react";
 import { SubscriptionModal } from "@/components/ui/subscription-modal";
 import Navigation from "@/components/ui/navigation";
 import Footer from "@/components/ui/footer";
+import LatestPosts from "@/components/blog/LatestPosts";
 
 const Resources = () => {
   const [isSubscribeModalOpen, setIsSubscribeModalOpen] = useState(false);
@@ -156,51 +157,8 @@ const Resources = () => {
         </div>
       </section>
 
-      {/* Blog/Articles Section */}
-      {/*<section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12">Latest Compliance Updates</h2>
-
-            <div className="space-y-6">
-              {blogPosts.map((post, index) => (
-                <Card key={index} className="hover:shadow-md transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                      <Calendar className="h-4 w-4" />
-                      {post.date}
-                    </div>
-                    <CardTitle className="text-xl">{post.title}</CardTitle>
-                    <CardDescription>{post.excerpt}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Button variant="ghost" className="p-0 h-auto text-primary hover:text-primary/80">
-                      Read Article
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            <div className="text-center mt-12 space-y-4">
-              <Button variant="outline" size="lg">
-                Browse All Articles
-              </Button>
-              <div>
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90"
-                  onClick={() => setIsSubscribeModalOpen(true)}
-                >
-                  <Mail className="mr-2 h-5 w-5" />
-                  Subscribe for Updates
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>*/}
+      {/* Latest Blog Posts */}
+      <LatestPosts />
 
       {/* Final CTA Section */}
       <section className="py-16 bg-primary text-primary-foreground">
