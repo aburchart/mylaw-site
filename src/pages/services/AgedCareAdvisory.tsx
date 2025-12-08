@@ -155,13 +155,8 @@ const AgedCareAdvisory = () => {
               <Phone className="mr-2 h-5 w-5" />
               Book a Call
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Ask a Question
-            </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-              Chat on WhatsApp
-            </Button>
+            
+            
           </div>
         </div>
       </section>
