@@ -9,8 +9,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useToast } from "@/hooks/use-toast";
 import Navigation from "@/components/ui/navigation";
 import Footer from "@/components/ui/footer";
+import { z } from "zod";
 
 type AuthMode = "login" | "signup" | "forgot" | "reset";
+
+const emailSchema = z.string().trim().email("Invalid email address").max(255, "Email is too long");
+const passwordSchema = z.string().min(8, "Password must be at least 8 characters").max(128, "Password is too long");
 
 const Auth = () => {
   const [mode, setMode] = useState<AuthMode>("login");
@@ -39,16 +43,43 @@ const Auth = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate email for all modes except reset
+    if (mode !== "reset") {
+      const emailResult = emailSchema.safeParse(email);
+      if (!emailResult.success) {
+        toast({
+          title: "Validation Error",
+          description: emailResult.error.errors[0].message,
+          variant: "destructive",
+        });
+        return;
+      }
+    }
+    
+    // Validate password for login, signup, and reset modes
+    if (mode === "login" || mode === "signup" || mode === "reset") {
+      const passwordResult = passwordSchema.safeParse(password);
+      if (!passwordResult.success) {
+        toast({
+          title: "Validation Error",
+          description: passwordResult.error.errors[0].message,
+          variant: "destructive",
+        });
+        return;
+      }
+    }
+    
     setLoading(true);
 
     try {
       if (mode === "login") {
-        const { error } = await signIn(email, password);
+        const { error } = await signIn(email.trim(), password);
         if (!error) {
           navigate("/admin/dashboard");
         }
       } else if (mode === "signup") {
-        const { error } = await signUp(email, password);
+        const { error } = await signUp(email.trim(), password);
         if (!error) {
           toast({
             title: "Account created",
@@ -56,7 +87,7 @@ const Auth = () => {
           });
         }
       } else if (mode === "forgot") {
-        const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
           redirectTo: `${window.location.origin}/auth?type=recovery`,
         });
         if (error) {
