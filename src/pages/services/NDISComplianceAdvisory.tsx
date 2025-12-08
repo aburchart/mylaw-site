@@ -7,38 +7,32 @@ import { CheckCircle, Shield, AlertTriangle, Users, FileCheck, Clock, Download, 
 import { Link } from "react-router-dom";
 import { useBookingModal } from "@/components/ui/booking-modal";
 import servicesCareHero from "@/assets/services-care-hero.jpg";
-
 const NDISComplianceAdvisory = () => {
-  const { open: openBookingModal } = useBookingModal();
-  const commonTriggers = [
-    { text: "A surprise or scheduled NDIS Commission audit", icon: Search },
-    { text: "A request for evidence or service documentation", icon: FileCheck },
-    { text: "Uncertainty about compliance obligations", icon: AlertTriangle },
-    { text: "Policy or incident management issues", icon: Shield },
-    { text: "Complaints from participants, families, or staff", icon: Users },
-    { text: "Concerns about gaps in training or governance", icon: Clock }
-  ];
-
-  const services = [
-    "Interpreting NDIS Practice Standards",
-    "Preparing for NDIS audits or spot checks",
-    "Responding to Commission notices",
-    "Reviewing and drafting policies and procedures",
-    "Training staff on compliance-related responsibilities",
-    "Clarifying privacy, consent, and reporting obligations",
-    "Building internal audit and risk frameworks"
-  ];
-
-  const differentiators = [
-    "We understand the operational realities of NDIS delivery",
-    "Dual-qualified (Australia, NZ, Canada) legal counsel",
-    "Trusted by disability support businesses and sole providers",
-    "Clear, practical advice — no overwhelming legal talk",
-    "Focused on helping you keep services running, not on litigation"
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const {
+    open: openBookingModal
+  } = useBookingModal();
+  const commonTriggers = [{
+    text: "A surprise or scheduled NDIS Commission audit",
+    icon: Search
+  }, {
+    text: "A request for evidence or service documentation",
+    icon: FileCheck
+  }, {
+    text: "Uncertainty about compliance obligations",
+    icon: AlertTriangle
+  }, {
+    text: "Policy or incident management issues",
+    icon: Shield
+  }, {
+    text: "Complaints from participants, families, or staff",
+    icon: Users
+  }, {
+    text: "Concerns about gaps in training or governance",
+    icon: Clock
+  }];
+  const services = ["Interpreting NDIS Practice Standards", "Preparing for NDIS audits or spot checks", "Responding to Commission notices", "Reviewing and drafting policies and procedures", "Training staff on compliance-related responsibilities", "Clarifying privacy, consent, and reporting obligations", "Building internal audit and risk frameworks"];
+  const differentiators = ["We understand the operational realities of NDIS delivery", "Dual-qualified (Australia, NZ, Canada) legal counsel", "Trusted by disability support businesses and sole providers", "Clear, practical advice — no overwhelming legal talk", "Focused on helping you keep services running, not on litigation"];
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Breadcrumbs */}
@@ -57,10 +51,9 @@ const NDISComplianceAdvisory = () => {
       {/* Hero Section */}
       <section className="relative py-24 px-4 min-h-[60vh] flex items-center">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: `url(${servicesCareHero})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${servicesCareHero})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/60" />
         </div>
         
@@ -69,9 +62,7 @@ const NDISComplianceAdvisory = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Don't Risk Your NDIS Funding. We Keep You Compliant.
           </h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">
-            Practical legal support for NDIS providers across Queensland — so you stay accredited, avoid clawbacks, and deliver quality support safely.
-          </p>
+          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">Practical support for NDIS providers across Queensland — so you stay accredited, avoid clawbacks, and deliver quality support safely.</p>
           <Button size="lg" className="shadow-professional" onClick={openBookingModal}>
             <Phone className="mr-2 h-5 w-5" />
             Book a Compliance Call
@@ -101,18 +92,16 @@ const NDISComplianceAdvisory = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {commonTriggers.map((trigger, index) => {
-              const IconComponent = trigger.icon;
-              return (
-                <Card key={index} className="border-2 hover:border-primary/20 transition-all duration-300">
+            const IconComponent = trigger.icon;
+            return <Card key={index} className="border-2 hover:border-primary/20 transition-all duration-300">
                   <CardContent className="p-6 text-center">
                     <div className="mx-auto mb-4 p-3 rounded-full bg-primary/10 w-fit">
                       <IconComponent className="h-6 w-6 text-primary" />
                     </div>
                     <p className="text-sm leading-relaxed">{trigger.text}</p>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
         </div>
       </section>
@@ -124,12 +113,10 @@ const NDISComplianceAdvisory = () => {
             <h2 className="text-3xl font-bold text-foreground mb-4">Our NDIS Compliance Services Include:</h2>
           </div>
           <div className="grid gap-4">
-            {services.map((service, index) => (
-              <div key={index} className="flex items-start space-x-3 p-4 rounded-lg hover:bg-muted/30 transition-colors">
+            {services.map((service, index) => <div key={index} className="flex items-start space-x-3 p-4 rounded-lg hover:bg-muted/30 transition-colors">
                 <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-lg">{service}</span>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -141,12 +128,10 @@ const NDISComplianceAdvisory = () => {
             <h2 className="text-3xl font-bold text-foreground mb-4">Why NDIS Providers Trust MyLaw Solutions</h2>
           </div>
           <div className="grid gap-4">
-            {differentiators.map((point, index) => (
-              <div key={index} className="flex items-start space-x-3 p-4 rounded-lg bg-background border">
+            {differentiators.map((point, index) => <div key={index} className="flex items-start space-x-3 p-4 rounded-lg bg-background border">
                 <Shield className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-lg">{point}</span>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -200,8 +185,6 @@ const NDISComplianceAdvisory = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default NDISComplianceAdvisory;
