@@ -31,7 +31,7 @@ const AgedCareAdvisory = () => {
     icon: CheckCircle
   }];
   const services = ["Policy and procedure review & drafting", "Staff training on resident rights, consent, and safety", "Clinical documentation audits", "Risk assessment for regulatory gaps", "On-call support during audit season", "Preparing evidence bundles and regulator responses", "Advice on privacy, incident reporting, and governance"];
-  const differentiators = ["Former hospital in-house legal counsel", "Dual-qualified (Australia, NZ, Canada)", "Fluent in clinical documentation and aged care standards", "We explain legal risk in plain English — no courtroom jargon", "We focus on preventing harm and keeping your facility running smoothly"];
+  const differentiators = ["Former hospital in-house legal counsel", "Dual-qualified (Australia, NZ, Canada)", "Fluent in clinical documentation and aged care standards", "We explain legal regulatory risk in plain English — no courtroom jargon", "We focus on preventing harm and keeping your facility running smoothly"];
   return <div className="min-h-screen bg-background">
       <Navigation />
       
