@@ -97,9 +97,7 @@ const HealthcarePracticeSupport = () => {
       {/* Who We Help */}
       <section className="container mx-auto px-4 py-16 bg-muted/50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Legal Support for Everyday Healthcare Settings
-          </h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Practice Management and Compliance Support for Everyday Healthcare Settings</h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
             {whoWeHelp.map((item, index) => <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-6">
