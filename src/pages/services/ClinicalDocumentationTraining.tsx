@@ -5,60 +5,30 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Users, Stethoscope, Shield, BookOpen, Clock, CheckCircle2, AlertCircle, FileText } from "lucide-react";
 import { useBookingModal } from "@/components/ui/booking-modal";
 import servicesCareHero from "@/assets/services-care-hero.jpg";
-
 const ClinicalDocumentationTraining = () => {
-  const { open: openBookingModal } = useBookingModal();
-  const targetAudience = [
-    {
-      icon: Stethoscope,
-      text: "Registered Nurses (RNs)"
-    },
-    {
-      icon: Users,
-      text: "Allied Health Professionals"
-    },
-    {
-      icon: Shield,
-      text: "Aged Care & NDIS Support Workers"
-    },
-    {
-      icon: BookOpen,
-      text: "Practice Managers & Compliance Leads"
-    },
-    {
-      icon: Clock,
-      text: "New Staff Onboarding Teams"
-    }
-  ];
-
-  const trainingTopics = [
-    "Clinical documentation best practices",
-    "What regulators look for in notes & forms",
-    "Incident documentation & risk flagging",
-    "Resident rights & informed consent",
-    "Aged Care Quality Standards documentation",
-    "NDIS worker responsibilities & reporting",
-    "When to escalate — and how to record it"
-  ];
-
-  const howItWorks = [
-    "Delivered in-person (Brisbane) or virtually across Australia",
-    "Customised to your facility's procedures and risk areas",
-    "Includes real case scenarios, roleplay, and sample records",
-    "1-hour, half-day, or full-day options available",
-    "Post-training report with recommendations for improvement"
-  ];
-
-  const whyItMatters = [
-    "Protects your staff during investigations",
-    "Prevents patient harm due to poor handover",
-    "Demonstrates compliance during audits",
-    "Supports clear communication in care teams",
-    "Builds a safety-first culture"
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const {
+    open: openBookingModal
+  } = useBookingModal();
+  const targetAudience = [{
+    icon: Stethoscope,
+    text: "Registered Nurses (RNs)"
+  }, {
+    icon: Users,
+    text: "Allied Health Professionals"
+  }, {
+    icon: Shield,
+    text: "Aged Care & NDIS Support Workers"
+  }, {
+    icon: BookOpen,
+    text: "Practice Managers & Compliance Leads"
+  }, {
+    icon: Clock,
+    text: "New Staff Onboarding Teams"
+  }];
+  const trainingTopics = ["Clinical documentation best practices", "What regulators look for in notes & forms", "Incident documentation & risk flagging", "Resident rights & informed consent", "Aged Care Quality Standards documentation", "NDIS worker responsibilities & reporting", "When to escalate — and how to record it"];
+  const howItWorks = ["Delivered in-person (Brisbane) or virtually across Australia", "Customised to your facility's procedures and risk areas", "Includes real case scenarios, roleplay, and sample records", "1-hour, half-day, or full-day options available", "Post-training report with recommendations for improvement"];
+  const whyItMatters = ["Protects your staff during investigations", "Prevents patient harm due to poor handover", "Demonstrates compliance during audits", "Supports clear communication in care teams", "Builds a safety-first culture"];
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Breadcrumbs */}
@@ -77,10 +47,9 @@ const ClinicalDocumentationTraining = () => {
       {/* Hero Section */}
       <section className="relative py-24 px-4 min-h-[60vh] flex items-center">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: `url(${servicesCareHero})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${servicesCareHero})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/60" />
         </div>
         
@@ -89,9 +58,7 @@ const ClinicalDocumentationTraining = () => {
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Education and Training That Protects Your Team and Your Residents
           </h1>
-          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">
-            Empower your care team with practical compliance training and best practice education — delivered by a legal adviser who understands the frontline.
-          </p>
+          <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto mb-8">Empower your care team with practical compliance training and best practice education. Because Prevention is better than a cure.</p>
           <Button size="lg" className="shadow-professional" onClick={openBookingModal}>
             Book a Training Session
           </Button>
@@ -120,16 +87,14 @@ const ClinicalDocumentationTraining = () => {
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {targetAudience.map((audience, index) => {
-              const IconComponent = audience.icon;
-              return (
-                <div key={index} className="flex items-center space-x-4 p-6 bg-background rounded-lg shadow-sm">
+            const IconComponent = audience.icon;
+            return <div key={index} className="flex items-center space-x-4 p-6 bg-background rounded-lg shadow-sm">
                   <div className="flex-shrink-0">
                     <IconComponent className="h-8 w-8 text-primary" />
                   </div>
                   <p className="font-medium text-foreground">{audience.text}</p>
-                </div>
-              );
-            })}
+                </div>;
+          })}
           </div>
         </div>
       </section>
@@ -141,12 +106,10 @@ const ClinicalDocumentationTraining = () => {
             Documentation & Compliance Topics We Teach
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {trainingTopics.map((topic, index) => (
-              <div key={index} className="flex items-start space-x-4 p-6 bg-muted/30 rounded-lg">
+            {trainingTopics.map((topic, index) => <div key={index} className="flex items-start space-x-4 p-6 bg-muted/30 rounded-lg">
                 <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">{topic}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -158,12 +121,10 @@ const ClinicalDocumentationTraining = () => {
             Flexible, Practical Training That Fits Your Team
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {howItWorks.map((item, index) => (
-              <div key={index} className="flex items-start space-x-4 p-6 bg-background rounded-lg shadow-sm">
+            {howItWorks.map((item, index) => <div key={index} className="flex items-start space-x-4 p-6 bg-background rounded-lg shadow-sm">
                 <BookOpen className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">{item}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -175,12 +136,10 @@ const ClinicalDocumentationTraining = () => {
             Documentation Is Your Legal Lifeline
           </h2>
           <div className="space-y-4">
-            {whyItMatters.map((point, index) => (
-              <div key={index} className="flex items-start space-x-4 p-4 bg-muted/30 rounded-lg">
+            {whyItMatters.map((point, index) => <div key={index} className="flex items-start space-x-4 p-4 bg-muted/30 rounded-lg">
                 <Shield className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">{point}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -233,8 +192,6 @@ const ClinicalDocumentationTraining = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ClinicalDocumentationTraining;
