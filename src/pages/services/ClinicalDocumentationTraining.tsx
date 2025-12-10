@@ -145,28 +145,7 @@ const ClinicalDocumentationTraining = () => {
       </section>
 
       {/* Free Resource Download */}
-      <section className="py-16 px-4 bg-muted/30">
-        <div className="container max-w-4xl mx-auto">
-          <Card className="border-2 border-primary/20 shadow-lg">
-            <CardHeader className="text-center">
-              <div className="mx-auto mb-4 p-3 rounded-full bg-primary/10 w-fit">
-                <FileText className="h-8 w-8 text-primary" />
-              </div>
-              <CardTitle className="text-2xl mb-2">
-                Free Guide: The 7 Most Common Documentation Mistakes (And How to Avoid Them)
-              </CardTitle>
-              <CardDescription className="text-lg">
-                A must-have for care teams — this quick guide helps you reduce risk immediately.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="text-center">
-              <Button variant="outline" size="lg" className="border-primary text-primary shadow-professional">
-                Download the Free Guide
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      
 
       {/* Final CTA */}
       <section className="py-16 px-4 bg-primary text-primary-foreground">
