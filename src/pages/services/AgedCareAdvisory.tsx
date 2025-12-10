@@ -77,7 +77,7 @@ const AgedCareAdvisory = () => {
         <div className="container max-w-4xl mx-auto">
           <div className="prose prose-lg max-w-none text-muted-foreground">
           <p className="text-lg leading-relaxed mb-6">
-              Operating an aged care facility comes with constant regulatory pressure — from evolving laws to last-minute audit notices. At MyLaw Solutions, we partner with Aged Care providers to deliver practical, compliance-focused legal support tailored to the aged care sector.
+              Operating an aged care facility comes with constant regulatory pressure — from evolving laws to last-minute audit notices. At MyLaw Solutions, we partner with Aged Care providers to deliver practical, compliance-focused support tailored to the aged care sector.
             </p>
             <p className="text-lg leading-relaxed">
               Whether you're updating policies, training staff, or responding to the Aged Care Quality and Safety Commission (ACQSC), we make sure you meet your obligations and stay audit-ready — without putting your accreditation or funding at risk.
