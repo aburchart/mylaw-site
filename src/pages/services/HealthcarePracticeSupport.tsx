@@ -3,61 +3,51 @@ import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Shield, 
-  CheckCircle, 
-  Users, 
-  FileText, 
-  AlertTriangle, 
-  Download,
-  Stethoscope,
-  UserCheck,
-  Building,
-  Heart,
-  Clipboard
-} from "lucide-react";
+import { Shield, CheckCircle, Users, FileText, AlertTriangle, Download, Stethoscope, UserCheck, Building, Heart, Clipboard } from "lucide-react";
 import { useBookingModal } from "@/components/ui/booking-modal";
 import servicesCareHero from "@/assets/services-care-hero.jpg";
-
 const HealthcarePracticeSupport = () => {
-  const { open: openBookingModal } = useBookingModal();
-  const whoWeHelp = [
-    { icon: Stethoscope, title: "General Practices & GP Clinics" },
-    { icon: Heart, title: "Allied Health Services (physio, speech, OT, etc.)" },
-    { icon: Users, title: "Community Health Teams" },
-    { icon: Building, title: "Specialist Medical Centres" },
-    { icon: UserCheck, title: "Nurse Practitioners & Clinical Managers" }
-  ];
-
-  const keyServices = [
-    "Clinical documentation audits & coaching",
-    "Consent & capacity documentation support", 
-    "Privacy law compliance (digital & paper-based)",
-    "Health record management guidance",
-    "Incident reporting & ombudsman response support",
-    "Workplace policy drafting (HR, confidentiality, etc.)",
-    "Regulatory prep (Ahpra, Ombudsman, Medicare reviews)"
-  ];
-
-  const riskTriggers = [
-    { icon: FileText, text: "Confusion about documentation standards" },
-    { icon: Clipboard, text: "Gaps in consent forms or policies" },
-    { icon: Shield, text: "Staff unfamiliar with privacy requirements" },
-    { icon: AlertTriangle, text: "Escalating patient complaints or reviews" },
-    { icon: CheckCircle, text: "Preparing for regulator visits or inquiries" },
-    { icon: Users, text: "New clinicians needing compliance onboarding" }
-  ];
-
-  const whyChooseUs = [
-    "We've worked inside healthcare — not just beside it",
-    "Dual-qualified: Australia, NZ, and Canadian legal systems",
-    "Fluent in medical terminology, clinical risk, and plain English",
-    "We prevent patient harm — before it leads to legal harm",
-    "No litigation, no court — just smart, proactive support"
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const {
+    open: openBookingModal
+  } = useBookingModal();
+  const whoWeHelp = [{
+    icon: Stethoscope,
+    title: "General Practices & GP Clinics"
+  }, {
+    icon: Heart,
+    title: "Allied Health Services (physio, speech, OT, etc.)"
+  }, {
+    icon: Users,
+    title: "Community Health Teams"
+  }, {
+    icon: Building,
+    title: "Specialist Medical Centres"
+  }, {
+    icon: UserCheck,
+    title: "Nurse Practitioners & Clinical Managers"
+  }];
+  const keyServices = ["Clinical documentation audits & coaching", "Consent & capacity documentation support", "Privacy law compliance (digital & paper-based)", "Health record management guidance", "Incident reporting & ombudsman response support", "Workplace policy drafting (HR, confidentiality, etc.)", "Regulatory prep (Ahpra, Ombudsman, Medicare reviews)"];
+  const riskTriggers = [{
+    icon: FileText,
+    text: "Confusion about documentation standards"
+  }, {
+    icon: Clipboard,
+    text: "Gaps in consent forms or policies"
+  }, {
+    icon: Shield,
+    text: "Staff unfamiliar with privacy requirements"
+  }, {
+    icon: AlertTriangle,
+    text: "Escalating patient complaints or reviews"
+  }, {
+    icon: CheckCircle,
+    text: "Preparing for regulator visits or inquiries"
+  }, {
+    icon: Users,
+    text: "New clinicians needing compliance onboarding"
+  }];
+  const whyChooseUs = ["We've worked inside healthcare — not just beside it", "Dual-qualified: Australia, NZ, and Canadian legal systems", "Fluent in medical terminology, clinical risk, and plain English", "We prevent patient harm — before it leads to legal harm", "No litigation, no court — just smart, proactive support"];
+  return <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Breadcrumbs */}
@@ -70,10 +60,9 @@ const HealthcarePracticeSupport = () => {
       {/* Hero Section */}
       <section className="relative py-24 px-4 min-h-[60vh] flex items-center">
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center" 
-          style={{ backgroundImage: `url(${servicesCareHero})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${servicesCareHero})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary/60" />
         </div>
         
@@ -112,14 +101,12 @@ const HealthcarePracticeSupport = () => {
             Legal Support for Everyday Healthcare Settings
           </h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {whoWeHelp.map((item, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+            {whoWeHelp.map((item, index) => <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="pt-6">
                   <item.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
                   <h3 className="font-semibold text-sm">{item.title}</h3>
                 </CardContent>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -131,12 +118,10 @@ const HealthcarePracticeSupport = () => {
             What We Support You With
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
-            {keyServices.map((service, index) => (
-              <div key={index} className="flex items-start gap-3">
+            {keyServices.map((service, index) => <div key={index} className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-lg">{service}</span>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -148,12 +133,10 @@ const HealthcarePracticeSupport = () => {
             Why Clinics Reach Out
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {riskTriggers.map((trigger, index) => (
-              <div key={index} className="flex items-start gap-4 p-4 bg-background rounded-lg border">
+            {riskTriggers.map((trigger, index) => <div key={index} className="flex items-start gap-4 p-4 bg-background rounded-lg border">
                 <trigger.icon className="w-8 h-8 text-primary flex-shrink-0" />
                 <span className="text-lg">{trigger.text}</span>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -165,35 +148,16 @@ const HealthcarePracticeSupport = () => {
             Support That Speaks Your Language (Not Legalese)
           </h2>
           <div className="space-y-4">
-            {whyChooseUs.map((point, index) => (
-              <div key={index} className="flex items-start gap-3">
+            {whyChooseUs.map((point, index) => <div key={index} className="flex items-start gap-3">
                 <Badge variant="outline" className="mt-1">✓</Badge>
                 <span className="text-lg">{point}</span>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
 
       {/* Download Section */}
-      <section className="container mx-auto px-4 py-16 bg-muted/50">
-        <div className="max-w-4xl mx-auto">
-          <Card className="text-center">
-            <CardHeader>
-              <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                <Download className="w-8 h-8 text-primary" />
-              </div>
-              <CardTitle className="text-2xl">Free Resource: Consent Documentation Checklist</CardTitle>
-              <CardDescription className="text-lg">
-                Ensure your consent forms meet clinical and legal standards with this simple guide.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button size="lg">Download the Checklist</Button>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      
 
       {/* Final CTA */}
       <section className="container mx-auto px-4 py-16">
@@ -213,8 +177,6 @@ const HealthcarePracticeSupport = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default HealthcarePracticeSupport;
