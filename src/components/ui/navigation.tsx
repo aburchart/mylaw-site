@@ -1,10 +1,13 @@
+'use client';
+
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useBookingModal } from "@/components/ui/booking-modal";
-import logoImage from "@/assets/mylaw-logo.png";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,7 +17,7 @@ import {
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
   const { open: openBookingModal } = useBookingModal();
 
   const navItems = [
@@ -33,16 +36,18 @@ const Navigation = () => {
     { name: "Education and Training", href: "/services/education-and-training" },
   ];
 
-  const isActive = (href: string) => location.pathname === href;
+  const isActive = (href: string) => pathname === href;
 
   return (
     <nav className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-3">
-          <img 
-            src={logoImage} 
-            alt="MyLaw Solutions Logo" 
+        <Link href="/" className="flex items-center space-x-3">
+          <Image
+            src="/mylaw-logo.png"
+            alt="MyLaw Solutions Logo"
+            width={160}
+            height={40}
             className="h-10 w-auto"
           />
         </Link>
@@ -52,7 +57,7 @@ const Navigation = () => {
           {navItems.map((item) => (
             <Link
               key={item.name}
-              to={item.href}
+              href={item.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
                 isActive(item.href)
@@ -68,7 +73,7 @@ const Navigation = () => {
           <DropdownMenu>
             <DropdownMenuTrigger className={cn(
               "flex items-center text-sm font-medium transition-colors hover:text-primary",
-              location.pathname.startsWith('/services')
+              pathname.startsWith('/services')
                 ? "text-primary border-b-2 border-primary pb-1"
                 : "text-muted-foreground"
             )}>
@@ -77,13 +82,13 @@ const Navigation = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="w-64 bg-background border shadow-lg z-50">
               <DropdownMenuItem asChild>
-                <Link to="/services" className="w-full font-medium">
+                <Link href="/services" className="w-full font-medium">
                   All Services
                 </Link>
               </DropdownMenuItem>
               {serviceItems.map((service) => (
                 <DropdownMenuItem key={service.name} asChild>
-                  <Link to={service.href} className="w-full">
+                  <Link href={service.href} className="w-full">
                     {service.name}
                   </Link>
                 </DropdownMenuItem>
@@ -119,7 +124,7 @@ const Navigation = () => {
             {navItems.map((item) => (
               <Link
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 className={cn(
                   "block py-2 text-sm font-medium transition-colors",
                   isActive(item.href)
@@ -135,10 +140,10 @@ const Navigation = () => {
             {/* Mobile Services Section */}
             <div className="py-2 border-t">
               <Link
-                to="/services"
+                href="/services"
                 className={cn(
                   "block py-2 text-sm font-medium transition-colors",
-                  location.pathname === '/services'
+                  pathname === '/services'
                     ? "text-primary"
                     : "text-muted-foreground hover:text-primary"
                 )}
@@ -150,7 +155,7 @@ const Navigation = () => {
                 {serviceItems.map((service) => (
                   <Link
                     key={service.name}
-                    to={service.href}
+                    href={service.href}
                     className={cn(
                       "block py-1 text-xs transition-colors",
                       isActive(service.href)

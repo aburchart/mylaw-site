@@ -1,8 +1,9 @@
+'use client';
+
 import { useState, useEffect } from "react";
 import { ArrowRight, Shield, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useBookingModal } from "@/components/ui/booking-modal";
-import heroBackground from "@/assets/hero-background.jpg";
 const HeroSection = () => {
   const {
     open: openBookingModal
@@ -24,7 +25,7 @@ const HeroSection = () => {
   }}>
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center" style={{
-      backgroundImage: `url(${heroBackground})`
+      backgroundImage: `url('/hero-background.jpg')`
     }}>
         <div className="absolute inset-0 bg-gradient-hero opacity-50" />
       </div>

@@ -1,5 +1,7 @@
+'use client';
+
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import BlogCard from "./BlogCard";
@@ -56,7 +58,7 @@ const LatestPosts = () => {
             </p>
           </div>
           <Button asChild variant="outline">
-            <Link to="/blog">
+            <Link href="/blog">
               View All Articles
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

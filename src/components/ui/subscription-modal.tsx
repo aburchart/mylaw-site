@@ -1,8 +1,9 @@
+'use client';
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import {
   Dialog,
   DialogContent,
@@ -39,7 +40,7 @@ interface SubscriptionModalProps {
 export function SubscriptionModal({ open, onOpenChange }: SubscriptionModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const form = useForm<SubscriptionFormData>({
     resolver: zodResolver(subscriptionSchema),
@@ -75,7 +76,7 @@ export function SubscriptionModal({ open, onOpenChange }: SubscriptionModalProps
 
       form.reset();
       onOpenChange(false);
-      navigate("/thank-you");
+      router.push("/thank-you");
     } catch (error) {
       console.error("Webhook submission error:", error);
       toast({

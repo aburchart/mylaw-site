@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CalendarDays } from "lucide-react";
@@ -23,7 +23,7 @@ const BlogCard = ({ title, slug, excerpt, category, featuredImage, publishedAt }
     : "";
 
   return (
-    <Link to={`/blog/${slug}`}>
+    <Link href={`/blog/${slug}`}>
       <Card className="h-full hover:shadow-lg transition-shadow">
         {featuredImage && (
           <div className="aspect-video overflow-hidden">

@@ -1,7 +1,7 @@
 import { Scale, Phone, Mail, MapPin, MessageCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import logoImage from "@/assets/mylaw-logo.png";
 const Footer = () => {
   const serviceLinks = [{
     name: "Aged Care Risk Management & Regulatory Compliance",
@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Company Info */}
           <div className="space-y-6">
-            <img src={logoImage} alt="MyLaw Solutions Logo" className="h-10 w-auto" />
+            <Image src="/mylaw-logo.png" alt="MyLaw Solutions Logo" width={160} height={40} className="h-10 w-auto" />
             
             <p className="text-primary-foreground/80 leading-relaxed">
               Brisbane's trusted advisors specialising in compliance for aged care, 
@@ -75,7 +75,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Our Services</h3>
             <div className="space-y-2">
-              {serviceLinks.map((link, index) => <Link key={index} to={link.href} onClick={() => window.scrollTo(0, 0)} className="block text-sm text-primary-foreground/80 hover:text-secondary-warm transition-colors">
+              {serviceLinks.map((link, index) => <Link key={index} href={link.href}className="block text-sm text-primary-foreground/80 hover:text-secondary-warm transition-colors">
                   {link.name}
                 </Link>)}
             </div>
@@ -85,7 +85,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="font-semibold text-lg">Resources</h3>
             <div className="space-y-2">
-              {resourceLinks.map((link, index) => <Link key={index} to={link.href} onClick={() => window.scrollTo(0, 0)} className="block text-sm text-primary-foreground/80 hover:text-secondary-warm transition-colors">
+              {resourceLinks.map((link, index) => <Link key={index} href={link.href}className="block text-sm text-primary-foreground/80 hover:text-secondary-warm transition-colors">
                   {link.name}
                 </Link>)}
             </div>
@@ -125,13 +125,13 @@ const Footer = () => {
         <div className="container py-6">
           <div className="flex justify-center md:justify-end items-center">
             <div className="flex space-x-6 text-sm">
-              <Link to="/privacy" onClick={() => window.scrollTo(0, 0)} className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
+              <Link href="/privacy"className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" onClick={() => window.scrollTo(0, 0)} className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
+              <Link href="/terms"className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
                 Terms of Service
               </Link>
-              <Link to="/disclaimer" onClick={() => window.scrollTo(0, 0)} className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
+              <Link href="/disclaimer"className="text-primary-foreground/60 hover:text-secondary-warm transition-colors">
                 Legal Disclaimer
               </Link>
             </div>
