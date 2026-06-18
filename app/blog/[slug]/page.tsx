@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { createServerClient } from "@/lib/supabase/server";
+import { getBlogPostBySlug, getBlogPosts } from "@/lib/convex/server";
 import Navigation from "@/components/ui/navigation";
 import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, CalendarDays } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -11,12 +12,12 @@ import { notFound } from "next/navigation";
 export const revalidate = 3600;
 
 export async function generateStaticParams() {
-  const supabase = createServerClient();
-  const { data } = await supabase
-    .from("blog_posts")
-    .select("slug")
-    .eq("published", true);
-  return (data || []).map((post: { slug: string }) => ({ slug: post.slug }));
+  try {
+    const posts = await getBlogPosts();
+    return posts.map((post: { slug: string }) => ({ slug: post.slug }));
+  } catch {
+    return [];
+  }
 }
 
 export async function generateMetadata({
@@ -24,25 +25,23 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const supabase = createServerClient();
-  const { data: post } = await supabase
-    .from("blog_posts")
-    .select("title, excerpt, featured_image")
-    .eq("slug", params.slug)
-    .eq("published", true)
-    .maybeSingle();
+  try {
+    const post = await getBlogPostBySlug(params.slug);
 
-  if (!post) return { title: "Post Not Found" };
+    if (!post) return { title: "Post Not Found" };
 
-  return {
-    title: post.title,
-    description: post.excerpt,
-    openGraph: {
+    return {
       title: post.title,
-      description: post.excerpt,
-      images: post.featured_image ? [{ url: post.featured_image }] : [],
-    },
-  };
+      description: post.excerpt || undefined,
+      openGraph: {
+        title: post.title,
+        description: post.excerpt || undefined,
+        images: post.featured_image ? [{ url: post.featured_image }] : [],
+      },
+    };
+  } catch {
+    return { title: "Post Not Found" };
+  }
 }
 
 export default async function BlogPostPage({
@@ -50,13 +49,12 @@ export default async function BlogPostPage({
 }: {
   params: { slug: string };
 }) {
-  const supabase = createServerClient();
-  const { data: post } = await supabase
-    .from("blog_posts")
-    .select("*")
-    .eq("slug", params.slug)
-    .eq("published", true)
-    .maybeSingle();
+  let post;
+  try {
+    post = await getBlogPostBySlug(params.slug);
+  } catch (error) {
+    console.error("Error fetching post:", error);
+  }
 
   if (!post) notFound();
 
@@ -81,11 +79,13 @@ export default async function BlogPostPage({
           </Button>
 
           {post.featured_image && (
-            <div className="aspect-video overflow-hidden rounded-lg mb-8">
-              <img
+            <div className="relative aspect-video overflow-hidden rounded-lg mb-8">
+              <Image
                 src={post.featured_image}
                 alt={post.title}
-                className="w-full h-full object-cover"
+                fill
+                sizes="(min-width: 1280px) 896px, (min-width: 768px) 90vw, 100vw"
+                className="object-cover"
               />
             </div>
           )}

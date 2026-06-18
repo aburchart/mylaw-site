@@ -1,9 +1,10 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
-import { supabase } from '@/integrations/supabase/client';
+import { useQuery, useMutation } from 'convex/react';
+import { api } from '../../../convex/_generated/api';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -11,7 +12,7 @@ import { useToast } from '@/hooks/use-toast';
 import { Pencil, Trash2, Plus, LogOut, Eye } from 'lucide-react';
 
 interface BlogPost {
-  id: string;
+  _id: string;
   title: string;
   slug: string;
   published: boolean;
@@ -20,21 +21,29 @@ interface BlogPost {
 }
 
 interface AdminDashboardClientProps {
-  initialPosts: BlogPost[];
+  initialPosts: any[];
 }
 
 export function AdminDashboardClient({ initialPosts }: AdminDashboardClientProps) {
   const router = useRouter();
-  const { signOut } = useAuth();
-  const [posts, setPosts] = useState<BlogPost[]>(initialPosts);
+  const { signOut, user } = useAuth();
   const { toast } = useToast();
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Use server data initially, then switch to live query
+  const posts = useQuery(api.blog.listAll) || initialPosts;
+
+  const deletePost = useMutation(api.blog.remove);
+  const updatePost = useMutation(api.blog.update);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to delete this post?')) return;
     try {
-      const { error } = await supabase.from('blog_posts').delete().eq('id', id);
-      if (error) throw error;
-      setPosts(posts.filter((post) => post.id !== id));
+      await deletePost({ id: id as any });
       toast({ title: 'Success', description: 'Post deleted successfully' });
     } catch (error) {
       console.error('Error deleting post:', error);
@@ -45,21 +54,11 @@ export function AdminDashboardClient({ initialPosts }: AdminDashboardClientProps
   const handleTogglePublish = async (post: BlogPost) => {
     try {
       const newPublishedState = !post.published;
-      const { error } = await supabase
-        .from('blog_posts')
-        .update({
-          published: newPublishedState,
-          published_at: newPublishedState ? new Date().toISOString() : null,
-        })
-        .eq('id', post.id);
-      if (error) throw error;
-      setPosts(
-        posts.map((p) =>
-          p.id === post.id
-            ? { ...p, published: newPublishedState, published_at: newPublishedState ? new Date().toISOString() : null }
-            : p
-        )
-      );
+      await updatePost({
+        id: post._id as any,
+        published: newPublishedState,
+        published_at: newPublishedState ? new Date().toISOString() : null,
+      });
       toast({ title: 'Success', description: `Post ${newPublishedState ? 'published' : 'unpublished'} successfully` });
     } catch (error) {
       console.error('Error toggling publish state:', error);
@@ -71,6 +70,10 @@ export function AdminDashboardClient({ initialPosts }: AdminDashboardClientProps
     await signOut();
     router.push('/');
   };
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <div className="min-h-screen bg-background p-8">
@@ -106,7 +109,7 @@ export function AdminDashboardClient({ initialPosts }: AdminDashboardClientProps
         ) : (
           <div className="space-y-4">
             {posts.map((post) => (
-              <Card key={post.id}>
+              <Card key={post._id}>
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
@@ -117,7 +120,7 @@ export function AdminDashboardClient({ initialPosts }: AdminDashboardClientProps
                         </Badge>
                       </div>
                       <CardDescription>
-                        Created: {new Date(post.created_at).toLocaleDateString()}
+                        Created: {new Date(post.created_at || '').toLocaleDateString()}
                         {post.published_at && (
                           <> • Published: {new Date(post.published_at).toLocaleDateString()}</>
                         )}
@@ -132,11 +135,11 @@ export function AdminDashboardClient({ initialPosts }: AdminDashboardClientProps
                         </Button>
                       )}
                       <Button asChild variant="ghost" size="icon">
-                        <Link href={`/admin/posts/${post.id}/edit`}>
+                        <Link href={`/admin/posts/${post._id}/edit`}>
                           <Pencil className="h-4 w-4" />
                         </Link>
                       </Button>
-                      <Button variant="ghost" size="icon" onClick={() => handleDelete(post.id)}>
+                      <Button variant="ghost" size="icon" onClick={() => handleDelete(post._id)}>
                         <Trash2 className="h-4 w-4" />
                       </Button>
                     </div>

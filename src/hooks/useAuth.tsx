@@ -1,97 +1,130 @@
+'use client';
+
 import { useState, useEffect, createContext, useContext, ReactNode } from "react";
-import { User, Session } from "@supabase/supabase-js";
-import { supabase } from "@/integrations/supabase/client";
+import { useAuth as useClerkAuth, useUser, useClerk } from "@clerk/react";
+import { useMutation } from "convex/react";
 import { useToast } from "@/hooks/use-toast";
+import { api } from "../../convex/_generated/api";
 
 interface AuthContextType {
-  user: User | null;
-  session: Session | null;
-  loading: boolean;
-  signIn: (email: string, password: string) => Promise<{ error: any }>;
-  signUp: (email: string, password: string) => Promise<{ error: any }>;
+  user: any;
+  isLoading: boolean;
+  isAuthenticated: boolean;
+  signIn: (email: string, password: string) => Promise<void>;
+  signUp: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
-  const [loading, setLoading] = useState(true);
-  const { toast } = useToast();
-
-  useEffect(() => {
-    // Set up auth state listener
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
-        setLoading(false);
-      }
-    );
-
-    // Check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      setLoading(false);
-    });
-
-    return () => subscription.unsubscribe();
-  }, []);
-
-  const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
-    
-    if (error) {
-      toast({
-        title: "Login failed",
-        description: error.message,
-        variant: "destructive",
-      });
-    }
-    
-    return { error };
-  };
-
-  const signUp = async (email: string, password: string) => {
-    const redirectUrl = `${window.location.origin}/`;
-    
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: redirectUrl
-      }
-    });
-    
-    if (error) {
-      toast({
-        title: "Signup failed",
-        description: error.message,
-        variant: "destructive",
-      });
-    }
-    
-    return { error };
-  };
-
-  const signOut = async () => {
-    await supabase.auth.signOut();
-    toast({
-      title: "Logged out",
-      description: "You have been successfully logged out.",
-    });
-  };
-
+function FallbackAuthProvider({ children }: { children: ReactNode }) {
   return (
-    <AuthContext.Provider value={{ user, session, loading, signIn, signUp, signOut }}>
+    <AuthContext.Provider
+      value={{
+        user: null,
+        isLoading: false,
+        isAuthenticated: false,
+        signIn: async () => {},
+        signUp: async () => {},
+        signOut: async () => {},
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
+}
+
+function ClerkAuthProvider({ children }: { children: ReactNode }) {
+  const { isLoaded: clerkLoaded, userId, signOut: clerkSignOut } = useClerkAuth();
+  const { user: clerkUser } = useUser();
+  const { toast } = useToast();
+  const [isLoading, setIsLoading] = useState(true);
+
+  const setUserRole = useMutation(api.auth.setUserRole);
+
+  useEffect(() => {
+    if (clerkLoaded) {
+      setIsLoading(false);
+    }
+  }, [clerkLoaded]);
+
+  // Auto-set role for new users
+  useEffect(() => {
+    if (userId && clerkUser?.emailAddresses?.[0]?.emailAddress) {
+      const ensureUserRole = async () => {
+        try {
+          await setUserRole({
+            userId,
+            role: "user",
+          });
+        } catch {
+          // Role might already exist, ignore
+        }
+      };
+      ensureUserRole();
+    }
+  }, [userId, clerkUser, setUserRole]);
+
+  const signIn = async () => {
+    toast({
+      title: "Sign in",
+      description: "Please use the sign in form",
+    });
+  };
+
+  const signUp = async () => {
+    toast({
+      title: "Sign up",
+      description: "Please use the sign up form",
+    });
+  };
+
+  const signOut = async () => {
+    try {
+      await clerkSignOut();
+      toast({
+        title: "Logged out",
+        description: "You have been successfully logged out.",
+      });
+    } catch {
+      toast({
+        title: "Logout failed",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
+  if (!clerkLoaded || isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
+      </div>
+    );
+  }
+
+  return (
+    <AuthContext.Provider
+      value={{
+        user: clerkUser,
+        isLoading: false,
+        isAuthenticated: !!userId,
+        signIn,
+        signUp,
+        signOut,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const clerkPublishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+  if (!clerkPublishableKey) {
+    return <FallbackAuthProvider>{children}</FallbackAuthProvider>;
+  }
+  return <ClerkAuthProvider>{children}</ClerkAuthProvider>;
 };
 
 export const useAuth = () => {

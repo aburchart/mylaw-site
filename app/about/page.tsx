@@ -4,6 +4,7 @@ import Footer from "@/components/ui/footer";
 import { Award, MapPin, Briefcase, GraduationCap, Phone } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { BookingCTAButton } from "@/components/ui/booking-cta-button";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Myla Ruttan",
@@ -102,8 +103,14 @@ export default function About() {
               </Card>
 
               <Card className="overflow-hidden">
-                <div className="aspect-[3/4]">
-                  <img src="/mruttan-profile.jpg" alt="Myla Ruttan - Principal Legal Advisor at MyLaw Solutions" className="w-full h-full object-cover" />
+                <div className="relative aspect-[3/4]">
+                  <Image
+                    src="/mruttan-profile.jpg"
+                    alt="Myla Ruttan - Principal Legal Advisor at MyLaw Solutions"
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                  />
                 </div>
               </Card>
 

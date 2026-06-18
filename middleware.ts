@@ -3,11 +3,12 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   if (request.nextUrl.pathname.startsWith('/admin')) {
-    const hasSession = request.cookies
+    // Clerk session cookie names typically include '__clerk'
+    const hasClerkSession = request.cookies
       .getAll()
-      .some((c) => c.name.includes('-auth-token'));
+      .some((c) => c.name.startsWith('__clerk'));
 
-    if (!hasSession) {
+    if (!hasClerkSession) {
       const url = new URL('/auth', request.url);
       url.searchParams.set('redirect', request.nextUrl.pathname);
       return NextResponse.redirect(url);

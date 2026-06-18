@@ -1,42 +1,32 @@
 import { useState, useEffect } from "react";
-import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "./useAuth";
+import { useQuery } from "convex/react";
+import { api } from "../../convex/_generated/api";
 
 export const useAdminCheck = () => {
-  const { user, loading: authLoading } = useAuth();
+  const { user, isLoading: authLoading } = useAuth();
   const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
 
+  const userId = user?.id;
+  const adminStatus = useQuery(api.auth.isAdmin, { userId: userId || "" });
+
   useEffect(() => {
-    const checkAdminRole = async () => {
-      if (!user) {
-        setIsAdmin(false);
-        setLoading(false);
-        return;
-      }
-
-      try {
-        const { data, error } = await supabase
-          .from("user_roles")
-          .select("role")
-          .eq("user_id", user.id)
-          .eq("role", "admin")
-          .maybeSingle();
-
-        if (error) throw error;
-        setIsAdmin(!!data);
-      } catch (error) {
-        console.error("Error checking admin role:", error);
-        setIsAdmin(false);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (!authLoading) {
-      checkAdminRole();
+    if (authLoading) {
+      return;
     }
-  }, [user, authLoading]);
+
+    if (!user) {
+      setIsAdmin(false);
+      setLoading(false);
+      return;
+    }
+
+    if (adminStatus !== undefined) {
+      setIsAdmin(adminStatus);
+      setLoading(false);
+    }
+  }, [user, authLoading, adminStatus]);
 
   return { isAdmin, loading: loading || authLoading };
 };

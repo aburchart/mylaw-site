@@ -3,7 +3,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAuth } from '@/hooks/useAuth';
-import { supabase } from '@/integrations/supabase/client';
+import { useMutation } from 'convex/react';
+import { api } from '../../../convex/_generated/api';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -11,6 +12,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import { ArrowLeft } from 'lucide-react';
+import type { Id } from '../../../convex/_generated/dataModel';
 
 interface PostData {
   id?: string;
@@ -40,6 +42,9 @@ export function PostEditorClient({ mode, initialData }: PostEditorClientProps) {
   const [category, setCategory] = useState(initialData?.category ?? '');
   const [featuredImage, setFeaturedImage] = useState(initialData?.featured_image ?? '');
 
+  const createPost = useMutation(api.blog.create);
+  const updatePost = useMutation(api.blog.update);
+
   const generateSlug = (text: string) =>
     text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
@@ -64,25 +69,23 @@ export function PostEditorClient({ mode, initialData }: PostEditorClientProps) {
       const postData = {
         title,
         slug,
-        excerpt,
+        excerpt: excerpt || undefined,
         content,
-        category: category || null,
-        featured_image: featuredImage || null,
+        category: category || undefined,
+        featured_image: featuredImage || undefined,
         published: publish,
-        published_at: publish ? new Date().toISOString() : null,
+        published_at: publish ? new Date().toISOString() : undefined,
         author_id: user?.id,
       };
 
       if (mode === 'new') {
-        const { error } = await supabase.from('blog_posts').insert(postData);
-        if (error) throw error;
+        await createPost(postData);
         toast({ title: 'Success', description: 'Post created successfully' });
       } else {
-        const { error } = await supabase
-          .from('blog_posts')
-          .update(postData)
-          .eq('id', initialData!.id!);
-        if (error) throw error;
+        await updatePost({
+          id: initialData!.id as Id<"blog_posts">,
+          ...postData,
+        });
         toast({ title: 'Success', description: 'Post updated successfully' });
       }
       router.push('/admin/dashboard');

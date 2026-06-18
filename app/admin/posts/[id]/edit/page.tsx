@@ -1,4 +1,4 @@
-import { createServerClient } from '@/lib/supabase/server';
+import { convexServer, getBlogPosts } from '@/lib/convex/server';
 import { notFound } from 'next/navigation';
 import { AdminGuard } from '@/components/admin/AdminGuard';
 import { PostEditorClient } from '@/components/admin/PostEditorClient';
@@ -6,12 +6,15 @@ import { PostEditorClient } from '@/components/admin/PostEditorClient';
 export const dynamic = 'force-dynamic';
 
 export default async function EditPost({ params }: { params: { id: string } }) {
-  const supabase = createServerClient();
-  const { data: post } = await supabase
-    .from('blog_posts')
-    .select('id, title, slug, excerpt, content, category, featured_image')
-    .eq('id', params.id)
-    .maybeSingle();
+  let post = null;
+  
+  try {
+    // Try to fetch the post by ID
+    const posts = await getBlogPosts();
+    post = posts.find((p: any) => p._id === params.id);
+  } catch (error) {
+    console.error("Error fetching post:", error);
+  }
 
   if (!post) notFound();
 
@@ -20,7 +23,7 @@ export default async function EditPost({ params }: { params: { id: string } }) {
       <PostEditorClient
         mode="edit"
         initialData={{
-          id: post.id,
+          id: post._id,
           title: post.title,
           slug: post.slug,
           excerpt: post.excerpt ?? '',

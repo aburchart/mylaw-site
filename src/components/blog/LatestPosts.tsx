@@ -1,51 +1,21 @@
 'use client';
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { supabase } from "@/integrations/supabase/client";
+import { useQuery } from "convex/react";
+import { api } from "../../../convex/_generated/api";
 import { Button } from "@/components/ui/button";
 import BlogCard from "./BlogCard";
 import { ArrowRight } from "lucide-react";
 
-interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  category: string | null;
-  featured_image: string | null;
-  published_at: string | null;
-}
-
 const LatestPosts = () => {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
+  const posts = useQuery(api.blog.list);
 
-  useEffect(() => {
-    const fetchLatestPosts = async () => {
-      try {
-        const { data, error } = await supabase
-          .from("blog_posts")
-          .select("id, title, slug, excerpt, category, featured_image, published_at")
-          .eq("published", true)
-          .order("published_at", { ascending: false })
-          .limit(3);
-
-        if (error) throw error;
-        setPosts(data || []);
-      } catch (error) {
-        console.error("Error fetching latest posts:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchLatestPosts();
-  }, []);
-
-  if (loading || posts.length === 0) {
+  if (!posts || posts.length === 0) {
     return null;
   }
+
+  // Show only first 3 posts
+  const latestPosts = posts.slice(0, 3);
 
   return (
     <section className="py-16 px-4">
@@ -65,13 +35,13 @@ const LatestPosts = () => {
           </Button>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((post) => (
+          {latestPosts.map((post) => (
             <BlogCard
-              key={post.id}
-              id={post.id}
+              key={post._id}
+              id={post._id}
               title={post.title}
               slug={post.slug}
-              excerpt={post.excerpt}
+              excerpt={post.excerpt || ""}
               category={post.category || undefined}
               featuredImage={post.featured_image || undefined}
               publishedAt={post.published_at || undefined}

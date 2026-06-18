@@ -7,7 +7,7 @@ import { useToast } from '@/hooks/use-toast';
 
 export function AdminGuard({ children }: { children: React.ReactNode }) {
   const router = useRouter();
-  const { user, loading: authLoading } = useAuth();
+  const { user, isLoading: authLoading } = useAuth();
   const { isAdmin, loading: adminLoading } = useAdminCheck();
   const { toast } = useToast();
 

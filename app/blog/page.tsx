@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { createServerClient } from "@/lib/supabase/server";
+import { getBlogPosts } from "@/lib/convex/server";
 import Navigation from "@/components/ui/navigation";
 import Footer from "@/components/ui/footer";
 import BlogCard from "@/components/blog/BlogCard";
@@ -12,16 +12,10 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
-  const supabase = createServerClient();
   let posts: any[] = [];
 
   try {
-    const { data } = await supabase
-      .from("blog_posts")
-      .select("id, title, slug, excerpt, category, featured_image, published_at")
-      .eq("published", true)
-      .order("published_at", { ascending: false });
-    posts = data || [];
+    posts = await getBlogPosts();
   } catch (error) {
     console.error("Error fetching posts:", error);
   }
@@ -50,8 +44,8 @@ export default async function BlogPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {posts.map((post) => (
                   <BlogCard
-                    key={post.id}
-                    id={post.id}
+                    key={post._id}
+                    id={post._id}
                     title={post.title}
                     slug={post.slug}
                     excerpt={post.excerpt}
