@@ -2,12 +2,12 @@
 
 import { useState, useEffect, createContext, useContext, ReactNode } from "react";
 import { useAuth as useClerkAuth, useUser, useClerk } from "@clerk/react";
-import { useMutation } from "convex/react";
+// import { useMutation } from "convex/react";
 import { useToast } from "@/hooks/use-toast";
-import { api } from "../../convex/_generated/api";
+// import { api } from "../../convex/_generated/api";
 
 interface AuthContextType {
-  user: any;
+  user: ReturnType<typeof useUser>["user"];
   isLoading: boolean;
   isAuthenticated: boolean;
   signIn: (email: string, password: string) => Promise<void>;
@@ -40,7 +40,8 @@ function ClerkAuthProvider({ children }: { children: ReactNode }) {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(true);
 
-  const setUserRole = useMutation(api.auth.setUserRole);
+  // Convex role sync disabled — re-enable when backend is configured.
+  // const setUserRole = useMutation(api.auth.setUserRole);
 
   useEffect(() => {
     if (clerkLoaded) {
@@ -48,22 +49,18 @@ function ClerkAuthProvider({ children }: { children: ReactNode }) {
     }
   }, [clerkLoaded]);
 
-  // Auto-set role for new users
-  useEffect(() => {
-    if (userId && clerkUser?.emailAddresses?.[0]?.emailAddress) {
-      const ensureUserRole = async () => {
-        try {
-          await setUserRole({
-            userId,
-            role: "user",
-          });
-        } catch {
-          // Role might already exist, ignore
-        }
-      };
-      ensureUserRole();
-    }
-  }, [userId, clerkUser, setUserRole]);
+  // useEffect(() => {
+  //   if (userId && clerkUser?.emailAddresses?.[0]?.emailAddress) {
+  //     const ensureUserRole = async () => {
+  //       try {
+  //         await setUserRole({ userId, role: "user" });
+  //       } catch {
+  //         // Role might already exist, ignore
+  //       }
+  //     };
+  //     ensureUserRole();
+  //   }
+  // }, [userId, clerkUser, setUserRole]);
 
   const signIn = async () => {
     toast({

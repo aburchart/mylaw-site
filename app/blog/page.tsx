@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { getBlogPosts } from "@/lib/convex/server";
+// import { getBlogPosts } from "@/lib/convex/server";
 import Navigation from "@/components/ui/navigation";
 import Footer from "@/components/ui/footer";
-import BlogCard from "@/components/blog/BlogCard";
+// import BlogCard from "@/components/blog/BlogCard";
 
 export const revalidate = 60;
 
@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
-  let posts: any[] = [];
-
-  try {
-    posts = await getBlogPosts();
-  } catch (error) {
-    console.error("Error fetching posts:", error);
-  }
+  // Convex blog feed disabled — re-enable when backend is configured.
+  // let posts: any[] = [];
+  // try {
+  //   posts = await getBlogPosts();
+  // } catch (error) {
+  //   console.error("Error fetching posts:", error);
+  // }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -36,26 +36,9 @@ export default async function BlogPage() {
         </section>
         <section className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
-            {posts.length === 0 ? (
-              <div className="text-center py-12">
-                <p className="text-muted-foreground">No articles published yet.</p>
-              </div>
-            ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {posts.map((post) => (
-                  <BlogCard
-                    key={post._id}
-                    id={post._id}
-                    title={post.title}
-                    slug={post.slug}
-                    excerpt={post.excerpt}
-                    category={post.category || undefined}
-                    featuredImage={post.featured_image || undefined}
-                    publishedAt={post.published_at || undefined}
-                  />
-                ))}
-              </div>
-            )}
+            <div className="text-center py-12">
+              <p className="text-muted-foreground">No articles published yet.</p>
+            </div>
           </div>
         </section>
       </main>
