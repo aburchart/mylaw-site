@@ -16,10 +16,11 @@ interface BlogCardProps {
 
 const BlogCard = ({ title, slug, excerpt, category, featuredImage, publishedAt }: BlogCardProps) => {
   const formattedDate = publishedAt
-    ? new Date(publishedAt).toLocaleDateString("en-US", {
+    ? new Date(publishedAt).toLocaleDateString("en-AU", {
         year: "numeric",
         month: "long",
         day: "numeric",
+        timeZone: "UTC",
       })
     : "";
 

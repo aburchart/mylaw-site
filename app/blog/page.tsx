@@ -1,24 +1,16 @@
 import type { Metadata } from "next";
-// import { getBlogPosts } from "@/lib/convex/server";
 import Navigation from "@/components/ui/navigation";
 import Footer from "@/components/ui/footer";
-// import BlogCard from "@/components/blog/BlogCard";
-
-export const revalidate = 60;
+import BlogCard from "@/components/blog/BlogCard";
+import { getPublishedPosts } from "@/content/blog-posts";
 
 export const metadata: Metadata = {
   title: "Blog & Insights",
   description: "Expert insights and updates on healthcare compliance and best practices",
 };
 
-export default async function BlogPage() {
-  // Convex blog feed disabled — re-enable when backend is configured.
-  // let posts: any[] = [];
-  // try {
-  //   posts = await getBlogPosts();
-  // } catch (error) {
-  //   console.error("Error fetching posts:", error);
-  // }
+export default function BlogPage() {
+  const posts = getPublishedPosts();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -36,9 +28,25 @@ export default async function BlogPage() {
         </section>
         <section className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center py-12">
-              <p className="text-muted-foreground">No articles published yet.</p>
-            </div>
+            {posts.length === 0 ? (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">No articles published yet.</p>
+              </div>
+            ) : (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {posts.map((post) => (
+                  <BlogCard
+                    key={post.slug}
+                    id={post.slug}
+                    title={post.title}
+                    slug={post.slug}
+                    excerpt={post.excerpt}
+                    category={post.category}
+                    publishedAt={post.publishedAt}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </section>
       </main>
