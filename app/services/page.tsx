@@ -3,7 +3,7 @@ import Navigation from "@/components/ui/navigation";
 import Footer from "@/components/ui/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, CheckCircle, Stethoscope, FileSearch, BookOpen } from "lucide-react";
+import { Shield, CheckCircle, Stethoscope, FileSearch, BookOpen, ScrollText } from "lucide-react";
 import Link from "next/link";
 import { BookingCTAButton } from "@/components/ui/booking-cta-button";
 
@@ -49,6 +49,13 @@ export default function Services() {
       icon: BookOpen,
       href: "/services/education-and-training",
       color: "text-orange-600",
+    },
+    {
+      title: "Wills and Estate Planning",
+      description: "Wills, Powers of Attorney, and Advanced Health Directives, with mobile, in-person, or remote appointments.",
+      icon: ScrollText,
+      href: "/services/wills-and-estate-planning",
+      color: "text-amber-700",
     },
   ];
 

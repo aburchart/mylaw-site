@@ -7,6 +7,7 @@ import {
   Heart,
   BookOpen,
   FileText,
+  ScrollText,
   ArrowRight
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -51,6 +52,13 @@ const ServicesOverview = () => {
       description: "Practical compliance training for your team to prevent issues before they arise.",
       features: ["Staff workshops", "Policy training", "Best practices"],
       href: "/services/education-and-training"
+    },
+    {
+      icon: ScrollText,
+      title: "Wills and Estate Planning",
+      description: "Wills and other enduring documents, including a Power of Attorney and an Advanced Health Directive.",
+      features: ["Wills and estate planning", "Power of Attorney", "Mobile, in person, or remote"],
+      href: "/services/wills-and-estate-planning"
     }
   ];
 

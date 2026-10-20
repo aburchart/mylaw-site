@@ -34,6 +34,7 @@ const Navigation = () => {
     { name: "Healthcare Practice Support", href: "/services/healthcare-practice-support" },
     { name: "Audit & Regulatory Response", href: "/services/audit-regulatory-response" },
     { name: "Education and Training", href: "/services/education-and-training" },
+    { name: "Wills and Estate Planning", href: "/services/wills-and-estate-planning" },
   ];
 
   const isActive = (href: string) => pathname === href;

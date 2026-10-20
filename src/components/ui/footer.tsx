@@ -18,6 +18,9 @@ const Footer = () => {
   }, {
     name: "Training & Education",
     href: "/services/education-and-training"
+  }, {
+    name: "Wills and Estate Planning",
+    href: "/services/wills-and-estate-planning"
   }];
   const resourceLinks = [{
     name: "Compliance Updates",
