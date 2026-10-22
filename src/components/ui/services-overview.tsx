@@ -1,15 +1,18 @@
-import { 
-  Shield, 
-  FileCheck, 
-  Users, 
-  Heart, 
-  BookOpen, 
+'use client';
+
+import {
+  Shield,
+  FileCheck,
+  Users,
+  Heart,
+  BookOpen,
   FileText,
+  ScrollText,
   ArrowRight
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { useBookingModal } from "@/components/ui/booking-modal";
 
 const ServicesOverview = () => {
@@ -49,6 +52,13 @@ const ServicesOverview = () => {
       description: "Practical compliance training for your team to prevent issues before they arise.",
       features: ["Staff workshops", "Policy training", "Best practices"],
       href: "/services/education-and-training"
+    },
+    {
+      icon: ScrollText,
+      title: "Wills and Estate Planning",
+      description: "Wills and other enduring documents, including a Power of Attorney and an Advanced Health Directive.",
+      features: ["Wills and estate planning", "Power of Attorney", "Mobile, in person, or remote"],
+      href: "/services/wills-and-estate-planning"
     }
   ];
 
@@ -95,7 +105,7 @@ const ServicesOverview = () => {
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
                     asChild
                   >
-                    <Link to={service.href} aria-label={`Learn more about ${service.title}`}>
+                    <Link href={service.href} aria-label={`Learn more about ${service.title}`}>
                       Learn More
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>

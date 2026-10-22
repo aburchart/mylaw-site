@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CalendarDays } from "lucide-react";
@@ -15,22 +16,25 @@ interface BlogCardProps {
 
 const BlogCard = ({ title, slug, excerpt, category, featuredImage, publishedAt }: BlogCardProps) => {
   const formattedDate = publishedAt
-    ? new Date(publishedAt).toLocaleDateString("en-US", {
+    ? new Date(publishedAt).toLocaleDateString("en-AU", {
         year: "numeric",
         month: "long",
         day: "numeric",
+        timeZone: "UTC",
       })
     : "";
 
   return (
-    <Link to={`/blog/${slug}`}>
+    <Link href={`/blog/${slug}`}>
       <Card className="h-full hover:shadow-lg transition-shadow">
         {featuredImage && (
-          <div className="aspect-video overflow-hidden">
-            <img
+          <div className="relative aspect-video overflow-hidden">
+            <Image
               src={featuredImage}
               alt={title}
-              className="w-full h-full object-cover"
+              fill
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
           </div>
         )}
